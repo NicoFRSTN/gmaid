@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
+    @label = Label.new
   end
 
   def destroy

@@ -5,9 +5,9 @@ User.destroy_all
 
 user = User.create!(email: "toto@gmail.com",
                     password: "azerty"
-)
+                   )
 
-100.times do
+30.times do
   Message.create!(
     sender_email: Faker::Internet.email,
     content: Faker::Lorem.paragraph,

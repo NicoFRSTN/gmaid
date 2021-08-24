@@ -1,0 +1,24 @@
+<h1>Voici un message</h1>
+
+
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p><%= @message.sender_email %></p>
+    <p><%= @message.content %></p>
+
+    <div>
+    <%= simple_form_for [@message, @label] do |f| %>
+      <%= f.input :name %>
+      <%= f.button :submit %>
+      <% end %>
+
+      <% @message.labels.each do |label| %>
+        <p><%= label.name %></p>
+      <% end %>
+
+
+
+    </div>
+  </div>
+</div>

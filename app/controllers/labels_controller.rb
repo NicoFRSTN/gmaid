@@ -5,8 +5,11 @@ class LabelsController < ApplicationController
 
   def create
     @label = Label.new(label_params)
+    @message = Message.find(params[:message_id])
+    @label.message = @message
+
     if @label.save
-      redirect_to labels_path
+      redirect_to message_path(@message)
     else
       render :new
     end
@@ -20,7 +23,7 @@ class LabelsController < ApplicationController
     @label = Label.find(params[:id])
 
     if @label.update(label_params)
-      redirect_to @label, notice: "Your label has been updated !"
+      redirect_to @label, notice: "Your label are update with success !"
     else
       render :edit
     end
