@@ -5,7 +5,7 @@ class LabelsController < ApplicationController
 
   def create
     @label = Label.new(label_params)
-    if @lable.save
+    if @label.save
       redirect_to labels_path
     else
       render :new
