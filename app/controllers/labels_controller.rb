@@ -30,8 +30,9 @@ class LabelsController < ApplicationController
   end
 
   def destroy
-    @label = Label.destroy(params[:id])
-    redirect_to message_path
+    @label = Label.find(params[:id])
+    @label.destroy
+    redirect_to message_path(@label.message)
   end
 
   private

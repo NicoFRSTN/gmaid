@@ -14,7 +14,8 @@
       <% end %>
 
       <% @message.labels.each do |label| %>
-        <p><%= label.name %></p>
+        <p><%= label.name %><%= link_to "X", label_path(label), method: :delete %></p>
+
       <% end %>
 
 

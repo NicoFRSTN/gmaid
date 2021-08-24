@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :messages, only:[:index, :show, :destroy]
 
   resources :messages, only: [] do
-    resources :labels, only: :create
+    resources :labels, only: [:create]
   end
+
+  resources :labels, only: :destroy
 end
