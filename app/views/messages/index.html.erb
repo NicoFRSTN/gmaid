@@ -1,1 +1,17 @@
-<h1>voici tout nos messages</h1>
+
+<div class="container">
+  <h1 class="text-center">mes messages</h1>
+    <div class="row">
+      <div class="col">
+      <% @messages.each do |message| %>
+        <div class="bg-secondary">
+          <p><%= message.sender_email %></p>
+          <p><%= message.content %></p>
+
+          <%= link_to "see more", message_path(message) %>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+</div>
