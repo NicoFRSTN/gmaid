@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   end
 
   resources :labels, only: :destroy
+
+  get 'auth/google_oauth2/callback', to: 'sessions#GoogleAuth'
+  get 'auth/failure', to: redirect('/')
+
 end
