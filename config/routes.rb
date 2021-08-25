@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :labels, only: [:create]
   end
 
-  resources :labels, only: :destroy
+  resources :labels, only: [:edit, :destroy]
 end
