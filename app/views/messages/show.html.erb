@@ -14,9 +14,13 @@
       <% end %>
 
       <% @message.labels.each do |label| %>
-        <p><%= label.name %><%= link_to "delete", label_path(label), method: :delete %>
-                            <%= link_to "edit", edit_label_path(label) %>
+      <div class="block">
+        <p>
+          <%= label.name %>
+          <%= link_to "delete", label_path(label), method: :delete %>
+          <%= link_to "edit", edit_label_path(label) %>
         </p>
+      </div>
 
 
 
