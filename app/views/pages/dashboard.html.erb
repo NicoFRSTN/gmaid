@@ -1,2 +1,17 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+  <div class="input-group justify-content-center ">
+    <div class="form-outline">
+      <%= simple_form_for :search, method: :get,
+        html: { class: 'bg-info p-4 d-flex' } do |f| %>
+        <%= f.input :query, placeholder: "Search a mail ...",
+                            label: false,
+                            input_html: { name: :query,
+                                          value: params.dig(:query) } %>
+        <div class='rounded-lg'>
+          <%= f.submit "Search", class: "text-center btn btn-primary"  %>
+        </div>
+        <% end %>
+      </div>
+  </div>

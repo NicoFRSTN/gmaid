@@ -1,6 +1,13 @@
 class MessagesController < ApplicationController
   def index
     @messages = Message.all
+
+    if params[:query].present?
+      sql_query = "sender_email ILIKE :query OR model ILIKE :query"
+      @messages = Message.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @messages = Message.all
+    end
   end
 
   def show
