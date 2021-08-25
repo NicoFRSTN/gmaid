@@ -1,6 +1,9 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+
+<%= current_user.email %>
+
   <div class="input-group justify-content-center ">
     <div class="form-outline">
       <%= simple_form_for :search, method: :get,
@@ -15,3 +18,4 @@
         <% end %>
       </div>
   </div>
+
