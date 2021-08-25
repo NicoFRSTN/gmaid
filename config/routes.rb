@@ -8,10 +8,12 @@ Rails.application.routes.draw do
     resources :labels, only: [:create]
   end
 
-  resources :labels, only: :destroy
+
+  resources :labels, only: [:edit, :destroy]
 
   get 'auth/google_oauth2/callback', to: 'sessions#GoogleAuth'
   get 'auth/failure', to: redirect('/')
+
 
 
 end

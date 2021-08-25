@@ -23,9 +23,9 @@ class LabelsController < ApplicationController
     @label = Label.find(params[:id])
 
     if @label.update(label_params)
-      redirect_to @label, notice: "Your label are update with success !"
+      redirect_to message_path(label.message)
     else
-      render :edit
+
     end
   end
 
