@@ -1,21 +1,120 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
 
-<%= current_user.email %>
-
-  <div class="input-group justify-content-center ">
-    <div class="form-outline">
-      <%= simple_form_for :search, method: :get,
-        html: { class: 'bg-info p-4 d-flex' } do |f| %>
-        <%= f.input :query, placeholder: "Search a mail ...",
-                            label: false,
-                            input_html: { name: :query,
-                                          value: params.dig(:query) } %>
-        <div class='rounded-lg'>
-          <%= f.submit "Search", class: "text-center btn btn-primary"  %>
-        </div>
-        <% end %>
-      </div>
+  <div class="heading">
+    <h1 class="heading__title">Main senders</h1>
+    <p class="heading__credits"><a class="heading__link" target="_blank" href="https://dribbble.com/sl">What to clean
+        today</a></p>
   </div>
-
+<div class="main-container">
+<div class="courses-container">
+  <div class="course">
+    <div class="course-preview">
+      <h6>From</h6>
+      <h2>Fnac.com</h2>
+      <a href="#">View all <i class="fas fa-chevron-right"></i></a>
+    </div>
+    <div class="course-info">
+      <div class="progress-container">
+        <div class="progress"></div>
+        <span class="progress-text">
+          6/50 Mails received
+        </span>
+      </div>
+      <h6>Received : 08/06/2021</h6>
+      <h2>Nouvelle collection en ligne !</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <button class="btn">Promotion</button>
+      <button class="btn">Advertise</button>
+    </div>
+</div>
+<div class="courses-container">
+  <div class="course">
+    <div class="course-preview">
+      <h6>From</h6>
+      <h2>Darty.com</h2>
+      <a href="#">View all <i class="fas fa-chevron-right"></i></a>
+    </div>
+    <div class="course-info">
+      <div class="progress-container">
+        <div class="progress"></div>
+        <span class="progress-text">
+          2/20 Mails received
+        </span>
+      </div>
+      <h6>Received : 08/06/2021</h6>
+      <h2>Nouvelle collection en ligne !</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <button class="btn">Promotion</button>
+      <button class="btn">Advertise</button>
+    </div>
+  </div>
+  <div class="courses-container">
+    <div class="course">
+      <div class="course-preview">
+        <h6>From</h6>
+        <h2>Gosport</h2>
+        <a href="#">View all <i class="fas fa-chevron-right"></i></a>
+      </div>
+      <div class="course-info">
+        <div class="progress-container">
+          <div class="progress"></div>
+          <span class="progress-text">
+            6/50 Mails received
+          </span>
+        </div>
+        <h6>Received : 08/06/2021</h6>
+        <h2>Nouvelle collection en ligne !</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <button class="btn">Magazine</button>
+        <button class="btn">Lecture</button>
+      </div>
+    </div>
+    <div class="courses-container">
+      <div class="course">
+        <div class="course-preview">
+          <h6>From</h6>
+          <h2>Seloger</h2>
+          <a href="#">View all <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="course-info">
+          <div class="progress-container">
+            <div class="progress"></div>
+            <span class="progress-text">
+              6/50 Mails received
+            </span>
+          </div>
+          <h6>Received : 08/06/2021</h6>
+          <h2>Nouvelle collection en ligne !</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <button class="btn">Real estate</button>
+          <button class="btn">Investment</button>
+        </div>
+      </div>
+      <div class="courses-container">
+        <div class="course">
+          <div class="course-preview">
+            <div class="text-preview">
+            <h6>From</h6>
+            <h2>Indeed</h2>
+            </div>
+            <a href="#">View all <i class="fas fa-chevron-right"></i></a>
+            <div class="checkbox-preview">
+              <label class="checkbox">
+                <input type="checkbox" />
+              </label>
+            </div>
+          </div>
+          <div class="course-info">
+            <div class="progress-container">
+              <div class="progress"></div>
+              <span class="progress-text">
+                6/50 Mails received
+              </span>
+            </div>
+            <h6>Received : 08/06/2021</h6>
+            <h2>Nouvelle collection en ligne !</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <button class="btn">Promotion</button>
+            <button class="btn">Advertise</button>
+          </div>
+        </div>

@@ -1,0 +1,6 @@
+<h1>Edit label/h1>
+
+<%= simple_form_for [@message, @label] do |f| %>
+      <%= f.input :name %>
+      <%= f.button :submit, 'Edit label', class: "btn btn-danger" %>
+  <% end %>
