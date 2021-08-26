@@ -1,72 +1,16 @@
-
-
-
-  <div class="main-container">
-    <div class="heading">
-      <h1 class="heading__title">Main senders</h1>
-      <p class="heading__credits"><a class="heading__link" target="_blank" href="https://dribbble.com/sl">What to clean today</a></p>
+<div class="cards">
+  <% @biggest_senders.each do |couple| %>
+    <% email = couple["sender_email"] %>
+    <% number = couple["number"] %>
+    <div class="card card-1">
+      <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title"><%= email %> (<%= number %>)</h2>
+        <p class="card__apply">
+          <%= link_to 'All mails', messages_path(query: email), class: "card__link"%>
+          <i class="fas fa-arrow-right"></i>
+        </p>
+      </div>
+  <% end %>
     </div>
-    <div class="cards">
-      <% @biggest_senders.each do |couple| %>
-        <% email = couple["sender_email"] %>
-        <% number = couple["number"] %>
-        <div class="card card-1">
-          <div class="card__icon"><i class="fas fa-bolt"></i></div>
-          <p class="card__exit"><i class="fas fa-times"></i></p>
-          <h2 class="card__title"><%= email %> (<%= number %>)</h2>
-          <p class="card__apply">
-            <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
-            <%= link_to 'Read More', messages_path(query: email) %>
-          </p>
-        </div>
-      <% end %>
-
-      <h1>hjellkdjflkjlkj</h1>
-      <div class="card card-2">
-        <div class="card__icon"><i class="fas fa-bolt"></i></div>
-        <p class="card__exit"><i class="fas fa-times"></i></p>
-        <h2 class="card__title">Lefigaro.fr</h2>
-        <p class="card__apply">
-          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
-        </p>
-      </div>
-
-
-      <div class="card card-3">
-        <div class="card__icon"><i class="fas fa-bolt"></i></div>
-        <p class="card__exit"><i class="fas fa-times"></i></p>
-        <h2 class="card__title">Darty.com</h2>
-        <p class="card__apply">
-          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
-        </p>
-      </div>
-
-
-
-
-      <div class="card card-4">
-        <div class="card__icon"><i class="fas fa-bolt"></i></div>
-        <p class="card__exit"><i class="fas fa-times"></i></p>
-        <h2 class="card__title">Lewagon.com</h2>
-        <p class="card__apply">
-          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
-        </p>
-      </div>
-      <div class="card card-5">
-        <div class="card__icon"><i class="fas fa-bolt"></i></div>
-        <p class="card__exit"><i class="fas fa-times"></i></p>
-        <h2 class="card__title">Gosport.com</h2>
-        <p class="card__apply">
-          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
-        </p>
-      </div>
-      <div class="card card-1">
-        <div class="card__icon"><i class="fas fa-bolt"></i></div>
-        <p class="card__exit"><i class="fas fa-times"></i></p>
-        <h2 class="card__title">Canal+.com</h2>
-        <p class="card__apply">
-          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
-        </p>
-      </div>
-    </div>
-  </div>
+</div>

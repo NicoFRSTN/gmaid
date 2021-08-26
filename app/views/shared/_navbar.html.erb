@@ -17,7 +17,7 @@
       </ul>
       <div class="input-group justify-content-end w-50">
         <div class="form-outline">
-          <%= simple_form_for :search, method: :get,
+          <%= simple_form_for :search, method: :get, url: messages_path,
                       html: { class: 'p-4 d-flex' } do |f| %>
           <%= f.input :query, placeholder: "Search a mail ...",
                             label: false,
