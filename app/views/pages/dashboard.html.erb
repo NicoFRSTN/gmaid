@@ -1,13 +1,12 @@
 <div class="cards">
   <% @biggest_senders.each do |couple| %>
-    <% email = couple["sender_email"] %>
+    <% company = couple["company"] %>
     <% number = couple["number"] %>
     <div class="card card-1">
-      <div class="card__icon"><i class="fas fa-bolt"></i></div>
-        <p class="card__exit"><i class="fas fa-times"></i></p>
-        <h2 class="card__title"><%= email %> (<%= number %>)</h2>
+      <div class="card__icon"><i class="fas fa-envelope"></i></div>
+        <p class="card__title"><%= company %> (<%= number %>)</p>
         <p class="card__apply">
-          <%= link_to 'All mails', messages_path(query: email), class: "card__link"%>
+          <%= link_to 'All mails', messages_path(query: company), class: "card__link"%>
           <i class="fas fa-arrow-right"></i>
         </p>
       </div>
