@@ -1,9 +1,7 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.all
-
     if params[:query].present?
-      sql_query = "sender_email ILIKE :query OR model ILIKE :query"
+      sql_query = "sender_email ILIKE :query"
       @messages = Message.where(sql_query, query: "%#{params[:query]}%")
     else
       @messages = Message.all
@@ -17,5 +15,13 @@ class MessagesController < ApplicationController
 
   def destroy
     @message = Message.destroy(params[:id])
+  end
+
+  private
+
+  def big_senders
+    query = "SELECT content FROM messages"
+
+    @biggest_senders = ActiveRecord::Base.connection.execute(query).to_a
   end
 end

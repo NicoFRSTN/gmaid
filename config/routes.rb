@@ -5,15 +5,10 @@ Rails.application.routes.draw do
   resources :messages, only:[:index, :show, :destroy]
 
   resources :messages, only: [] do
-    resources :labels, only: [:create]
+    resources :labels, only: [:create, :edit, :update]
   end
-
-
-  resources :labels, only: [:edit, :destroy]
+  resources :labels, only: [:destroy]
 
   get 'auth/google_oauth2/callback', to: 'sessions#GoogleAuth'
   get 'auth/failure', to: redirect('/')
-
-
-
 end

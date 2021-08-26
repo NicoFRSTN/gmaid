@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+  box-sizing: border-box;
+}
+/* HEADING */
+// .heading {
+//   /* text-align: center; */
+//   display: flex;
+// }
+// .heading__title {
+//   font-weight: 600;
+//   margin-right: 340px;
+// }
+// .heading__credits {
+//   margin-left: 20px;
+//   color: #888888;
+//   font-size: 25px;
+//   transition: all 0.5s;
+// }
+// .heading__link {
+//   text-decoration: none;
+// }
+// .heading__credits .heading__link {
+//   color: inherit;
+// }
+body {
+  background-image: linear-gradient(45deg, #F5F5F5, #ECECEC);
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+.course {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  margin: 20px;
+  overflow: hidden;
+  width: 800px;
+  height: 170px;
+}
+
+.course-preview {
+  background-color: #4D5BF9;
+  color: #fff;
+  padding: 30px;
+  width: 250px;
+}
+
+
+.btn {
+  background-color: #F94DF0;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 11px;
+  padding: 4px;
+  letter-spacing: 1px;
+}
+/* SOCIAL PANEL CSS */

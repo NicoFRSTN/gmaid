@@ -1,21 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
-<%= current_user.email %>
-
-  <div class="input-group justify-content-center ">
-    <div class="form-outline">
-      <%= simple_form_for :search, method: :get,
-        html: { class: 'bg-info p-4 d-flex' } do |f| %>
-        <%= f.input :query, placeholder: "Search a mail ...",
-                            label: false,
-                            input_html: { name: :query,
-                                          value: params.dig(:query) } %>
-        <div class='rounded-lg'>
-          <%= f.submit "Search", class: "text-center btn btn-primary"  %>
-        </div>
-        <% end %>
+<div class="cards">
+  <% @biggest_senders.each do |couple| %>
+    <% email = couple["sender_email"] %>
+    <% number = couple["number"] %>
+    <div class="card card-1">
+      <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title"><%= email %> (<%= number %>)</h2>
+        <p class="card__apply">
+          <%= link_to 'All mails', messages_path(query: email), class: "card__link"%>
+          <i class="fas fa-arrow-right"></i>
+        </p>
       </div>
-  </div>
-
+  <% end %>
+    </div>
+</div>
