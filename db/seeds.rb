@@ -46,6 +46,4 @@ end
     user: user
   )
 end
-
-
 puts "#{Message.count} messages are available !"

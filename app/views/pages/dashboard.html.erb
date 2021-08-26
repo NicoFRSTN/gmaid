@@ -1,120 +1,72 @@
 
 
-  <div class="heading">
-    <h1 class="heading__title">Main senders</h1>
-    <p class="heading__credits"><a class="heading__link" target="_blank" href="https://dribbble.com/sl">What to clean
-        today</a></p>
+
+  <div class="main-container">
+    <div class="heading">
+      <h1 class="heading__title">Main senders</h1>
+      <p class="heading__credits"><a class="heading__link" target="_blank" href="https://dribbble.com/sl">What to clean today</a></p>
+    </div>
+    <div class="cards">
+      <% @biggest_senders.each do |couple| %>
+        <% email = couple["sender_email"] %>
+        <% number = couple["number"] %>
+        <div class="card card-1">
+          <div class="card__icon"><i class="fas fa-bolt"></i></div>
+          <p class="card__exit"><i class="fas fa-times"></i></p>
+          <h2 class="card__title"><%= email %> (<%= number %>)</h2>
+          <p class="card__apply">
+            <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
+            <%= link_to 'Read More', messages_path(query: email) %>
+          </p>
+        </div>
+      <% end %>
+
+      <h1>hjellkdjflkjlkj</h1>
+      <div class="card card-2">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title">Lefigaro.fr</h2>
+        <p class="card__apply">
+          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
+        </p>
+      </div>
+
+
+      <div class="card card-3">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title">Darty.com</h2>
+        <p class="card__apply">
+          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
+        </p>
+      </div>
+
+
+
+
+      <div class="card card-4">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title">Lewagon.com</h2>
+        <p class="card__apply">
+          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
+        </p>
+      </div>
+      <div class="card card-5">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title">Gosport.com</h2>
+        <p class="card__apply">
+          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
+        </p>
+      </div>
+      <div class="card card-1">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title">Canal+.com</h2>
+        <p class="card__apply">
+          <a class="card__link" href="#">Read more <i class="fas fa-arrow-right"></i></a>
+        </p>
+      </div>
+    </div>
   </div>
-<div class="main-container">
-<div class="courses-container">
-  <div class="course">
-    <div class="course-preview">
-      <h6>From</h6>
-      <h2>Fnac.com</h2>
-      <a href="#">View all <i class="fas fa-chevron-right"></i></a>
-    </div>
-    <div class="course-info">
-      <div class="progress-container">
-        <div class="progress"></div>
-        <span class="progress-text">
-          6/50 Mails received
-        </span>
-      </div>
-      <h6>Received : 08/06/2021</h6>
-      <h2>Nouvelle collection en ligne !</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      <button class="btn">Promotion</button>
-      <button class="btn">Advertise</button>
-    </div>
-</div>
-<div class="courses-container">
-  <div class="course">
-    <div class="course-preview">
-      <h6>From</h6>
-      <h2>Darty.com</h2>
-      <a href="#">View all <i class="fas fa-chevron-right"></i></a>
-    </div>
-    <div class="course-info">
-      <div class="progress-container">
-        <div class="progress"></div>
-        <span class="progress-text">
-          2/20 Mails received
-        </span>
-      </div>
-      <h6>Received : 08/06/2021</h6>
-      <h2>Nouvelle collection en ligne !</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      <button class="btn">Promotion</button>
-      <button class="btn">Advertise</button>
-    </div>
-  </div>
-  <div class="courses-container">
-    <div class="course">
-      <div class="course-preview">
-        <h6>From</h6>
-        <h2>Gosport</h2>
-        <a href="#">View all <i class="fas fa-chevron-right"></i></a>
-      </div>
-      <div class="course-info">
-        <div class="progress-container">
-          <div class="progress"></div>
-          <span class="progress-text">
-            6/50 Mails received
-          </span>
-        </div>
-        <h6>Received : 08/06/2021</h6>
-        <h2>Nouvelle collection en ligne !</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <button class="btn">Magazine</button>
-        <button class="btn">Lecture</button>
-      </div>
-    </div>
-    <div class="courses-container">
-      <div class="course">
-        <div class="course-preview">
-          <h6>From</h6>
-          <h2>Seloger</h2>
-          <a href="#">View all <i class="fas fa-chevron-right"></i></a>
-        </div>
-        <div class="course-info">
-          <div class="progress-container">
-            <div class="progress"></div>
-            <span class="progress-text">
-              6/50 Mails received
-            </span>
-          </div>
-          <h6>Received : 08/06/2021</h6>
-          <h2>Nouvelle collection en ligne !</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-          <button class="btn">Real estate</button>
-          <button class="btn">Investment</button>
-        </div>
-      </div>
-      <div class="courses-container">
-        <div class="course">
-          <div class="course-preview">
-            <div class="text-preview">
-            <h6>From</h6>
-            <h2>Indeed</h2>
-            </div>
-            <a href="#">View all <i class="fas fa-chevron-right"></i></a>
-            <div class="checkbox-preview">
-              <label class="checkbox">
-                <input type="checkbox" />
-              </label>
-            </div>
-          </div>
-          <div class="course-info">
-            <div class="progress-container">
-              <div class="progress"></div>
-              <span class="progress-text">
-                6/50 Mails received
-              </span>
-            </div>
-            <h6>Received : 08/06/2021</h6>
-            <h2>Nouvelle collection en ligne !</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-            <button class="btn">Promotion</button>
-            <button class="btn">Advertise</button>
-          </div>
-        </div>
