@@ -1,33 +1,21 @@
-<h1>Voici un message</h1>
-
-
-
 <div class="card" style="width: 18rem;">
-  <div class="card-body">
+  <div class="card-body text-white">
     <p><%= @message.sender_email %></p>
     <p><%= @message.content %></p>
 
-    <div>
     <%= simple_form_for [@message, @label] do |f| %>
       <%= f.input :name %>
       <%= f.button :submit %>
-      <% end %>
+    <% end %>
 
-      <% @message.labels.each do |label| %>
-        <div class="block">
-          <p>
-            <%= label.name %>
-            <%= link_to "edit", edit_message_label_path(@message, label), class: "btn btn-info" %>
-            <%= link_to "delete", label_path(label), class: "btn btn-danger", method: :delete %>
-          </p>
-        </div>
-      <% end %>
-
-
-
-
-
-
-    </div>
+    <% @message.labels.each do |label| %>
+      <div class="d-flex justify-content-between">
+        <%= label.name %>
+          <div>
+            <%= link_to image_tag("https://cdn3.iconfinder.com/data/icons/modifier-starter/48/v-06-512.png", width: 30), edit_message_label_path(@message, label)%>
+            <%= link_to image_tag("https://cdn3.iconfinder.com/data/icons/modifier-starter/48/v-05-512.png", width: 30), label_path(label), method: :delete %>
+          </div>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -1,39 +1,26 @@
-<h1>Main senders</h1>
+
+<h1 class="text-center text-white m-3">Advertisement</h1>
 
 
-<div class="main-container">
-  <div class="courses-container">
+  <div class="d-flex flex-wrap m-2 justify-content-center text-white carte">
     <% @messages.each do |message| %>
-      <div class="course">
-        <div class="course-preview">
-          <h4><%= message.sender_email %></h4>
-          <%= link_to "see more", message_path(message), class: "btn btn-info" %>
+    <div class="main-card m-2 p-4">
+      <% message.labels.each do |label| %>
+        <div>
+          <%= label.name %>
         </div>
-          <div class="course-info">
-            <h2><%= message.content %></h2>
-              <p><%= message.content %></p>
-          <% message.labels.each do |label| %>
-            <div class="block">
-              <p>
-                <%= label.name %>
-              </p>
-          </div>
-            </div>
-          <% end %>
+      <% end %>
+
+      <div class="d-flex">
+        <div class="m-1 mr-4">
+          <h2><%= message.sender_email %></h2>
+        </div>
+        <div class="m-1">
+          <p><%= message.content %><%= link_to "see more", message_path(message), class: "text-decoration-none m-1" %></p>
         </div>
       </div>
+    </div>
+
     <% end %>
   </div>
 </div>
-
-
-
-
-
-
-      </div>
-      <h6>Received : 08/06/2021</h6>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      <button class="btn">Promotion</button>
-      <button class="btn">Advertise</button>
-    </div>
