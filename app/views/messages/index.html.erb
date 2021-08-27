@@ -1,10 +1,10 @@
 
 <h1 class="text-center text-white m-3">Advertisement</h1>
 
-<div>
-<% @messages.each do |message| %>
-  <div class="d-flex m-2 justify-content-center">
-    <div class="main-card  p-4">
+
+  <div class="d-flex flex-wrap m-2 justify-content-center text-white carte">
+    <% @messages.each do |message| %>
+    <div class="main-card m-2 p-4">
       <% message.labels.each do |label| %>
         <div>
           <%= label.name %>
@@ -20,6 +20,7 @@
         </div>
       </div>
     </div>
+
+    <% end %>
   </div>
-<% end %>
 </div>
