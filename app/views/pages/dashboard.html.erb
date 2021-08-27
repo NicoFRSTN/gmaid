@@ -2,7 +2,7 @@
   <% @biggest_senders.each do |couple| %>
     <% email = couple["sender_email"] %>
     <% number = couple["number"] %>
-    <div class="card">
+    <div class="card p-4">
         <h2 class="card-infos"><%= email %> (<%= number %>)</h2>
         <p><%= link_to 'All mails', messages_path(query: email), class: "card__link"%><i class="fas fa-arrow-right"></i></p>
       </div>
