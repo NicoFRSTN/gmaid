@@ -18,6 +18,7 @@ class User < ApplicationRecord
       password: Devise.friendly_token[0,20]
           )
     end
+    user.update(:google_token => (access_token.credentials['token']))
     user
   end
 end
