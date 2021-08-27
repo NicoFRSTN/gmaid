@@ -1,8 +1,10 @@
-<h1>Advertisement</h1>
 
+<h1 class="text-center text-white m-3">Advertisement</h1>
+
+<div>
 <% @messages.each do |message| %>
   <div class="d-flex m-2 justify-content-center">
-    <div class="main-card w-50 p-4 rounded">
+    <div class="main-card  p-4">
       <% message.labels.each do |label| %>
         <div>
           <%= label.name %>
@@ -10,13 +12,14 @@
       <% end %>
 
       <div class="d-flex">
-        <div class="m-1 mr-4 text-white">
+        <div class="m-1 mr-4">
           <h2><%= message.sender_email %></h2>
         </div>
-        <div class="m-1 text-white">
-          <p><%= message.content %><%= link_to "see more", message_path(message), class: "btn btn-primary m-1" %></p>
+        <div class="m-1">
+          <p><%= message.content %><%= link_to "see more", message_path(message), class: "text-decoration-none m-1" %></p>
         </div>
       </div>
     </div>
   </div>
 <% end %>
+</div>
