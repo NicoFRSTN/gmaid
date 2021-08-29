@@ -1,8 +1,38 @@
 .main-card{
-  width: 500px;
-  height: 150px;
-  background: radial-gradient(#1FE4F5, #3FBAFE);
+  width: 60%;
+  height: 30%;
+  background: rgb(61, 61, 61);
   // background: radial-gradient(rgb(243, 177, 90), rgb(255, 255, 255));
   border-radius: 15px;
 
+}
+
+.mail-card {
+  width:100%;
+  height: auto;
+  background: gray;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 3px;
+}
+
+.big-checkbox  > input {
+  width: 50px; height: 50px;
+}
+
+.label{
+  background: lightgray;
+  border-radius: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-right: 5px;
+  font-size: x-small;
+}
+
+h4{
+  font-size: large;
+}
+
+h5{
+  font-size: smaller;
 }
