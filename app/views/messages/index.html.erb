@@ -7,9 +7,7 @@
 
 <% @messages.each do |message| %>
   <div class='mail-card mx-auto'>
-
     <div class='row d-flex p-3 justify-content-around'>
-
       <div class='col-2 my-auto big-checkbox'>
         <input type="checkbox" id="mail_checkbox" name="check">
       </div>
@@ -29,7 +27,9 @@
       </div>
 
       <div class="col-2 my-auto">
+
         <h5><strong>Received on: </strong><br><%= message.date_at %></h5>
+
       </div>
 
     </div>
