@@ -69,3 +69,5 @@ gem 'turbo-rails'
 
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
+
+gem "awesome_print", "~> 1.9"

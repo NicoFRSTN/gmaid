@@ -10,28 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_27_144213) do
+ActiveRecord::Schema.define(version: 2021_08_30_081945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "labels", force: :cascade do |t|
     t.string "name"
-    t.bigint "message_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["message_id"], name: "index_labels_on_message_id"
+    t.string "google_id"
+    t.string "text_color"
+    t.string "background_color"
+    t.bigint "user_id"
+    t.index ["google_id"], name: "index_labels_on_google_id"
+    t.index ["user_id"], name: "index_labels_on_user_id"
+  end
+
+  create_table "message_labels", force: :cascade do |t|
+    t.bigint "message_id"
+    t.bigint "label_id"
+    t.index ["label_id"], name: "index_message_labels_on_label_id"
+    t.index ["message_id"], name: "index_message_labels_on_message_id"
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string "object"
-    t.string "content"
-    t.string "sender_email"
+    t.string "from"
+    t.string "subject"
+    t.datetime "date_at"
+    t.string "snippet"
+    t.string "google_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
-    t.string "gmail_id"
-    t.string "received_at"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -48,6 +57,6 @@ ActiveRecord::Schema.define(version: 2021_08_27_144213) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "labels", "messages"
-  add_foreign_key "messages", "users"
+  add_foreign_key "message_labels", "labels"
+  add_foreign_key "message_labels", "messages"
 end

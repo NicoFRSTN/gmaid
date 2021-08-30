@@ -10,7 +10,7 @@ CREDENTIALS_PATH = "credentials.json".freeze
 # created automatically when the authorization flow completes for the first
 # time.
 TOKEN_PATH = "token.yaml".freeze
-SCOPE = Google::Apis::GmailV1::AUTH_GMAIL_READONLY
+SCOPE = Google::Apis::GmailV1::AUTH_GMAIL_MODIFY
 
 ##
 # Ensure valid credentials, either by restoring from the saved credentials
@@ -33,6 +33,7 @@ def authorize
       user_id: user_id, code: code, base_url: OOB_URI
     )
   end
+  puts credentials
   credentials
 end
 
