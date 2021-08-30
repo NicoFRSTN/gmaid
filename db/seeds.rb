@@ -10,6 +10,7 @@ user = User.create!(email: "toto@gmail.com",
 30.times do
   Message.create!(
     sender_email: Faker::Internet.email,
+    object: 'pub',
     content: Faker::Lorem.paragraph,
     user: user
   )
@@ -18,6 +19,8 @@ end
 10.times do
   Message.create!(
     sender_email: "contact@fnac.com",
+    object: 'newsletter fnac',
+    received_at: '29 août 2021',
     content: Faker::Lorem.paragraph,
     user: user
   )
