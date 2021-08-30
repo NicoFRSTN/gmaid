@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :messages
+  has_many :labels
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
@@ -20,5 +21,9 @@ class User < ApplicationRecord
     end
     user.update(:google_token => (access_token.credentials['token']))
     user
+  end
+
+  def toto
+    puts "tata"
   end
 end
