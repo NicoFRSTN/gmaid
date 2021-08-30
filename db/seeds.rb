@@ -7,45 +7,54 @@ user = User.create!(email: "toto@gmail.com",
                     password: "azerty"
                    )
 
+  # t.string "from"
+  #   t.string "subject"
+  #   t.datetime "date_at"
+  #   t.string "snippet"
+
 30.times do
   Message.create!(
-    sender_email: Faker::Internet.email,
-    object: 'pub',
-    content: Faker::Lorem.paragraph,
+    google_id: 3,
+    from: Faker::Internet.email,
+    subject: 'pub',
+    snippet: Faker::Lorem.paragraph,
     user: user
   )
 end
 
 10.times do
   Message.create!(
-    sender_email: "contact@fnac.com",
-    object: 'newsletter fnac',
-    received_at: '29 août 2021',
-    content: Faker::Lorem.paragraph,
+    google_id: 3,
+    from: "contact@fnac.com",
+    subject: 'newsletter fnac',
+    snippet: Faker::Lorem.paragraph,
     user: user
   )
 end
 
 8.times do
   Message.create!(
-    sender_email: "contact@darty.com",
-    content: Faker::Lorem.paragraph,
+    google_id: 3,
+    from: "contact@darty.com",
+    snippet: Faker::Lorem.paragraph,
     user: user
   )
 end
 
 8.times do
   Message.create!(
-    sender_email: "contact@figaro.com",
-    content: Faker::Lorem.paragraph,
+    google_id: 3,
+    from: "contact@figaro.com",
+    snippet: Faker::Lorem.paragraph,
     user: user
   )
 end
 
 5.times do
   Message.create!(
-    sender_email: "contact@carrefour.com",
-    content: Faker::Lorem.paragraph,
+    google_id: 3,
+    from: "contact@carrefour.com",
+    snippet: Faker::Lorem.paragraph,
     user: user
   )
 end

@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
     if params[:query].present?
-      sql_query = "sender_email ILIKE :query"
+      sql_query = "messages.from ILIKE :query"
       @messages = Message.where(sql_query, query: "%#{params[:query]}%")
     else
       @messages = Message.all
@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
   private
 
   def big_senders
-    query = "SELECT content FROM messages"
+    query = "SELECT snippet FROM messages"
 
     @biggest_senders = ActiveRecord::Base.connection.execute(query).to_a
   end

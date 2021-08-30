@@ -27,6 +27,8 @@ class SyncMessages
 
   def fetch_messages
     @messages = FetchGoogleMessages.new(@user).call
+    ap "je suis la"
+    ap @messages
   end
 
   def save_in_db
