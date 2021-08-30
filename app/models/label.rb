@@ -1,3 +1,4 @@
 class Label < ApplicationRecord
-  belongs_to :message
+  has_many :message_labels, dependent: :destroy
+  has_many :messages, through: :message_labels
 end
