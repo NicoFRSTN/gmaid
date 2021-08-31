@@ -1,3 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "dashboard";
+
+.header {
+  top: 76px;
+  background: white;
+  margin-bottom: 43px;
+}
