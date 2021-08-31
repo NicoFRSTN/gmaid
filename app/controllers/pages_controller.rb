@@ -10,10 +10,14 @@ class PagesController < ApplicationController
   private
 
   def search_big_senders
-
-    query = "SELECT messages.from, COUNT(*) AS number FROM messages GROUP BY messages.from ORDER BY number DESC LIMIT 10"
-
-
-    @biggest_senders = ActiveRecord::Base.connection.execute(query).to_a
+    query = <<~SQL
+      SELECT
+        (regexp_matches (messages.from, '(.+)\s<(.+)@(.+)>'))[3] as domain,
+        COUNT(*) as number
+      FROM messages
+      GROUP BY domain
+      ORDER BY number desc
+    SQL
+    @biggest_senders =  ActiveRecord::Base.connection.execute(query).to_a
   end
 end

@@ -5,30 +5,60 @@
 
   <h2 class="text-center text-white m-3">Advertisement</h2>
 
-<% @messages.each do |message| %>
-  <div class='mail-card mx-auto'>
-    <div class='row d-flex p-3 justify-content-around'>
-      <div class='col-2 my-auto big-checkbox'>
-        <input type="checkbox" id="mail_checkbox" name="check">
-      </div>
+<ul>
+  <% @data.each do |sender_domain, senders| %>
+    <li>
+      <%= sender_domain %>
+      <ul>
+        <% senders.each do |sender, names| %>
+          <li>
+            <%= sender %>
+            <ul>
+               <% names.each do |name, messages| %>
+                <li><%= name %></li>
 
-      <div class='col-4 my-auto'>
-        <h4><%= message.from %></h4>
-        <div class='label-box d-flex mx-auto'>
-            <% message.labels.each do |label| %>
-              <div class='label'><%= label.name %></div>
-            <% end %>
-        </div>
-      </div>
 
-      <div class="col-4 my-auto">
-        <h5><strong>Subject: <%= message.subject %></strong></h5>
-        <h5><%= message.snippet %>.. <br><strong><%= link_to "see more", message_path(message), class: "text-decoration-none m-1" %></strong></h5>
-      </div>
+                <% messages.each do |message| %>
+                  <div class='mail-card mx-auto'>
+                    <div class='row d-flex p-3 justify-content-around'>
+                      <div class='col-2 my-auto big-checkbox'>
+                        <input type="checkbox" id="mail_checkbox" name="check">
+                      </div>
 
-      <div class="col-2 my-auto">
-        <h5><strong>Received on: </strong><br><%= message.date_at %></h5>
-      </div>
-    </div>
-  </div>
-<% end %>
+                      <div class='col-4 my-auto'>
+                        <h4><%= message.from %></h4>
+                        <p><%= message.name %> / <%= message.sender %></p>
+                        <div class='label-box d-flex mx-auto'>
+                            <% message.labels.each do |label| %>
+                              <div class='label'><%= label.name %></div>
+                            <% end %>
+                        </div>
+                      </div>
+
+                      <div class="col-4 my-auto">
+                        <h5><strong>Subject: <%= message.subject %></strong></h5>
+                        <h5><%= message.snippet %>.. <br><strong><%= link_to "see more", message_path(message), class: "text-decoration-none m-1" %></strong></h5>
+                      </div>
+
+                      <div class="col-2 my-auto">
+                        <h5><strong>Received on: </strong><br><%= message.date_at %></h5>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+
+
+               <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<style>
+  ul {
+    margin-left: 20px !important;
+  }
+</style>

@@ -6,11 +6,11 @@
 
 <div class="cards">
   <% @biggest_senders.each do |couple| %>
-    <% email = couple["from"] %>
+    <% domain = couple["domain"] %>
     <% number = couple["number"] %>
     <div class="card p-4">
-        <h2 class="card-infos"><%= email %> (<%= number %>)</h2>
-        <p><%= link_to 'All mails', messages_path(query: email), class: "card__link"%><i class="fas fa-arrow-right"></i></p>
+        <h2 class="card-infos"><%= domain %> (<%= number %>)</h2>
+        <p><%= link_to 'All mails', messages_path(sender_domain: domain), class: "card__link"%><i class="fas fa-arrow-right"></i></p>
       </div>
   <% end %>
     </div>
