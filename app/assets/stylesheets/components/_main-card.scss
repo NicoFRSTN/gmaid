@@ -9,11 +9,16 @@
 
 .mail-card {
   width:100%;
-  height: auto;
-  background: gray;
+  height: 100%;
+  background: lightslategray;
   border-radius: 15px;
   margin-bottom: 10px;
   padding: 3px;
+  box-shadow: 2px 2px 5px black;
+}
+
+.mail-card:hover {
+ transform: scale(1.01);
 }
 
 .big-checkbox  > input {

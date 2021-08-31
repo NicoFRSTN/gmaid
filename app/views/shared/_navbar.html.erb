@@ -1,34 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <div class="container-fluid">
-    <a href="#" class="navbar-brand logo"><span class="G">G</span><span class="m">m</span><span class="a">a</span><span class="i">i</span><span class="d">d</span></a>
+<div class='sticky-top mb-3'>
+  <div class="navbar navbar-expand-sm navbar-lewagon">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://previews.123rf.com/images/tribalium123/tribalium1231505/tribalium123150500123/40035722-ic%C3%B4ne-de-bo%C3%AEte-mail-bo%C3%AEte-de-bo%C3%AEte-aux-lettres-poste-avec-lettre-%C3%A0-l-int%C3%A9rieur.jpg", class:"logo" %>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">All Mails</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled text-white" href="#" tabindex="-1" aria-disabled="true">DeletedsMails</a>
-        </li>
-      </ul>
-      <div class="input-group justify-content-end w-50">
-        <div class="form-outline">
-          <%= simple_form_for :search, method: :get, url: messages_path,
-                      html: { class: 'p-4 d-flex' } do |f| %>
-          <%= f.input :query, placeholder: "Search for a sender ...",
-                            label: false,
-                            input_html: { name: :query,
-                                          value: params.dig(:query) } %>
-        <div class='rounded-lg'>
-          <%= f.submit "Search", class: "text-center btn btn-primary"  %>
-        </div>
+    <div class="w-100">
+      <ul class="navbar-nav mr-auto justify-content-end">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Logout",  destroy_user_session_path, :class => "btn btn-danger lien-nav" %>
+          </li>
         <% end %>
-        </div>
-      </div>
+      </ul>
     </div>
   </div>
-</nav>
+</div>
