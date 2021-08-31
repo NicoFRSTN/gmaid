@@ -11,13 +11,19 @@ ap "je suis la"
 
 user =  User.last
 
+# Message.destroy_all
 
-Message.destroy_all
+# SyncMessages.new(User.last).call
 
-SyncMessages.new(user).call
+# ap Message.all
 
-Message.all.each do |message|
-  ap "--------------"
-  ap message.snippet
-  ap message.labels.pluck(:name)
-end
+
+DeleteGoogleMessage.new(user, "17b78d18314a14bc").call
+
+
+
+# Message.all.each do |message|
+#   ap "--------------"
+#   ap message.snippet
+#   ap message.labels.pluck(:name)
+# end

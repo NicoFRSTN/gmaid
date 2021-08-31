@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :messages, only: [] do
     resources :labels, only: [:create, :edit, :update]
+    post :sync, on: :collection
   end
   resources :labels, only: [:destroy]
 

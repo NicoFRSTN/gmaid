@@ -1,5 +1,9 @@
 <h1 class="text-center text-white mt-3">My biggest senders</h1>
 
+<div class="btn btn-primary">
+  <%= link_to 'Synchronize !', sync_messages_path(current_user), method: :post, :class => "btn" %>
+</div>
+
 <div class="cards">
   <% @biggest_senders.each do |couple| %>
     <% email = couple["from"] %>
