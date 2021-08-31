@@ -17,6 +17,12 @@ class MessagesController < ApplicationController
     @message = Message.destroy(params[:id])
   end
 
+  def sync
+    Message.destroy_all
+    SyncMessages.new(current_user).call
+    redirect_to root_path
+  end
+
   private
 
   def big_senders
@@ -24,4 +30,5 @@ class MessagesController < ApplicationController
 
     @biggest_senders = ActiveRecord::Base.connection.execute(query).to_a
   end
+
 end
