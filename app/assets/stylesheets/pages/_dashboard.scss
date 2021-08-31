@@ -3,29 +3,138 @@
   padding: 0;
   box-sizing: border-box;
 }
-.cards {
+
+.cards-container {
+  width: 70%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.card {
-  background: lightslategray;
-  margin: 20px 50px 0px 50px;
+
+.main-cards {
+  background: rgb(205, 243, 255);
   width: 60%;
-  border-radius: 10px;
+  height:200px;
+  justify-content: center;
+  border-radius: 15px;
   transition: all 0.2s;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
 }
-.card:hover {
+
+.main-cards:hover {
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
   transform: scale(1.01);
 }
 
-.card-infos {
-  grid-row: 3/4;
+.main-cards-sender {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 60%;
+  padding: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 10px;
+  justify-content: center;
+  font-size: x-large;
+
   font-weight: 400;
-  color: #FFFFFF;
+  color: #000000;
+  font-weight:900;
 }
+
+.main-cards-details {
+  bottom: 0px;
+  height: 40%;
+}
+
+
+.mail-count{
+  background: rgb(94, 94, 94);
+  border-bottom-left-radius: 15px;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.received-count{
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.read-count{
+  background:lightgray;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.mail-link{
+  height: 100%;
+  background: rgb(243, 178, 0);
+  border-bottom-right-radius: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.mail-link a {
+  font-size: xx-large;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.mail-link a:hover{
+  color: gray;
+  text-decoration: none;
+}
+
+.card__link {
+  color: white;
+}
+
+.unread-number{
+  color: white;
+  font-size: 300%;
+  vertical-align: baseline;
+}
+
+.read-number{
+  color: gray;
+  font-size: 300%;
+  vertical-align: baseline;
+}
+
+.unread-text {
+   color:white;
+  text-align: start;
+  line-height: normal;
+  height: 50%;
+}
+
+.read-text {
+  color:gray;
+  text-align: start;
+  line-height: normal;
+  height: 50%;
+}
+
 /* CARD BACKGROUNDS */
 
 i {

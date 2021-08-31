@@ -25,7 +25,7 @@ class FetchGoogleLabels
     ap result
 
     result["labels"].map do |label|
-      format_label(label)
+    format_label(label)
     end
   end
 
