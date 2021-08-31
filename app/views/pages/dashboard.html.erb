@@ -1,50 +1,66 @@
-<div class="text-center rounded">
-  <%= link_to sync_messages_path(current_user), method: :post, :class => "btn btn-primary p-3" do %>
-      <i class="fas fa-sync-alt"></i> Synchronize my gmail
-  <% end %>
+<div class="container">
+
+  <!-- Bouton sync -->
+<div class='button-container'>
+  <div class="sync-button-card">
+
+    <i class="fas fa-sync-alt"></i>
+
+    <div >
+      <%= link_to sync_messages_path(current_user), method: :post, remote: true,:id => 'sync', :class => "sync-button-text" do %>
+        Synchronize my gmail
+      <% end %>
+    </div>
+
+  </div>
+
 </div>
 
-<div class="cards-container mx-auto">
-  <% @biggest_senders.each do |couple| %>
-    <% domain = couple["domain"] %>
-    <% number = couple["number"] %>
+
+  <!-- Bouton sync -->
+  <div class="cards-container mx-auto">
+    <% @biggest_senders.each do |couple| %>
+      <% domain = couple["domain"] %>
+      <% number = couple["number"] %>
 
 
-    <div class="main-cards mx-auto">
-      <div class="main-cards-sender row">
-        <%= domain %>
-      </div>
+      <div class="main-cards mx-auto">
+        <div class="main-cards-sender row">
+          <%= domain %>
+        </div>
 
-      <div class="main-cards-details d-flex row mx-auto w-100">
+        <div class="main-cards-details d-flex row mx-auto w-100">
 
-        <div class="mail-count d-flex justify-content-around col-6">
-          <i class="far fa-envelope fa-4x mx-auto"></i>
-          <div class="received-count d-flex mx-auto mr-3">
-            <div class="unread-number">
+          <div class="mail-count d-flex justify-content-around col-6">
+            <i class="far fa-envelope fa-4x mx-auto"></i>
+            <div class="received-count d-flex mx-auto mr-3">
+              <div class="unread-number">
+                <%= number %>
+              </div>
+              <div class="unread-text ml-2">
+                <p>RECEIVED<br>MAILS</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="read-count d-flex col-3">
+            <div class="read-number">
               <%= number %>
             </div>
-            <div class="unread-text ml-2">
-              <p>RECEIVED<br>MAILS</p>
+            <div class="read-text ml-2">
+              <p>READ<br>MAIL</p>
             </div>
           </div>
-        </div>
 
-
-        <div class="read-count d-flex col-3">
-          <div class="read-number">
-            <%= number %>
+          <div class="mail-link col-3">
+              <%= link_to 'Clean !', messages_path(sender_domain: domain)%>
           </div>
-          <div class="read-text ml-2">
-            <p>READ<br>MAIL</p>
-          </div>
-        </div>
 
-        <div class="mail-link col-3">
-            <%= link_to 'Clean !', messages_path(sender_domain: domain)%>
         </div>
 
       </div>
+    <% end %>
+  </div>
 
-    </div>
-  <% end %>
 </div>
