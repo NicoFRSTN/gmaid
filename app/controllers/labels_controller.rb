@@ -23,7 +23,7 @@ class LabelsController < ApplicationController
   def update
     @label = Label.find(params[:id])
     @message = Message.find(params[:message_id])
-    @label.message = @message
+    @label.message = @label
     if @label.update(label_params)
       redirect_to message_path(@label.message)
     else
