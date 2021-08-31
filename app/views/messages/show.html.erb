@@ -1,7 +1,7 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body text-white">
-    <p><%= @message.sender_email %></p>
-    <p><%= @message.content %></p>
+    <p><%= @message.from %></p>
+    <p><%= @message.snippet %></p>
 
     <%= simple_form_for [@message, @label] do |f| %>
       <%= f.input :name %>
