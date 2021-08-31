@@ -1,7 +1,7 @@
 <div class='sticky-top mb-3'>
-  <div class="navbar navbar-expand-sm navbar-dark bg-dark navbar-lewagon">
+  <div class="navbar navbar-expand-sm navbar-lewagon">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "http://guy.pastre.org/wp-content/uploads/2007/07/thunderbird-256.png", class:"logo" %>
+      <%= image_tag "https://previews.123rf.com/images/tribalium123/tribalium1231505/tribalium123150500123/40035722-ic%C3%B4ne-de-bo%C3%AEte-mail-bo%C3%AEte-de-bo%C3%AEte-aux-lettres-poste-avec-lettre-%C3%A0-l-int%C3%A9rieur.jpg", class:"logo" %>
     <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,11 +9,8 @@
 
 
     <div class="w-100">
-      <ul class="navbar-nav mr-auto justify-content-between">
+      <ul class="navbar-nav mr-auto justify-content-end">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Dashboard", root_path, :class => "lien-nav" %>
-          </li>
           <li class="nav-item">
             <%= link_to "Logout",  destroy_user_session_path, :class => "btn btn-danger lien-nav" %>
           </li>
