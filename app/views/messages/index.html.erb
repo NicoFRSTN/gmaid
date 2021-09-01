@@ -8,17 +8,17 @@
       <% end %>
     </h1>
     <div class="d-flex justify-content-around">
-      <%= link_to "Select ALL", class: 'selectall btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3'  %>
       <%#= f.submit "Select All", class: 'btns text-white pl-5 pr-5 mb-3' %>
       <%= f.submit "Mark as read", class: 'btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3' %>
-      <%= f.submit   "Delete", class: 'btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3' %>
+      <%= f.submit "Delete", class: 'btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3' %>
 
     </div>
   </div>
 
 
   <div class='container'>
-  <%# ici %>
+    <%= link_to "Select All", messages_path, class: 'selectall btn btn-secondary text-white btn-sm pl-5 pr-5 m-4'%>
+
     <% @data.each do |sender_domain, senders| %>
 
       <% senders.each do |sender, names| %>

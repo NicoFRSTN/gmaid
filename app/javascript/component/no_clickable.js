@@ -23,23 +23,36 @@ const updateSubmitButton = () => {
 //   }
 // }
 
-const selectallcheckboxe = () => {
+const initSelectAll = () => {
   const checkboxes = Array.from(document.querySelectorAll("#messages_form input[type=checkbox]"))
   const buttonselectall = document.querySelector('.selectall')
-    console.log("je suis la")
-    for (let checkbox of checkboxes) {
-      checkbox.checked = this.checked;
-    }
-  }
-
+  console.log(buttonselectall)
+  buttonselectall.addEventListener('click', (event) => {
+    event.preventDefault()
+    checkboxes.forEach((checkboxe) => {
+     (checkboxe.checked);
+    });
+  })
+}
+//   function checkAll(o) {
+//     const checkboxes = Array.from(document.querySelectorAll("#messages_form input[type=checkbox]"));
+//     for (let checkboxes = 0; checkboxes < checkboxes.length; checkboxes++) {
+//       let obj = boxes[x];
+//       if (obj.type == "checkbox") {
+//         if (obj.name ! = "check")
+//           obj.checked = o.checked;
+//       }
+//     }
+//   }
 
 
 const noClickable = () => {
+  initSelectAll()
   const checkboxes = document.querySelectorAll("#messages_form input[type=checkbox]")
   const btns = document.querySelectorAll("#messages_form input[type=submit]")
 
   checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', updateSubmitButton, selectallcheckboxe)
+    checkbox.addEventListener('change', updateSubmitButton)
   })
 }
 
