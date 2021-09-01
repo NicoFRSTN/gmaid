@@ -27,8 +27,6 @@ class SyncMessages
 
   def fetch_messages
     @messages = FetchGoogleMessages.new(@user).call
-    ap "je suis la"
-    ap @messages
   end
 
   def save_in_db
@@ -43,6 +41,17 @@ class SyncMessages
         labels: Label.where(google_id: message["labelIds"])
       }
     end
+
+    google_ids = Message.pluck(:google_id)
+
+    ap "google_ids:"
+    ap google_ids
+
+    message_data.reject! {|message_data| message_data[:google_id].in? google_ids }
+
+    ap "message_data:"
+    ap message_data
+
     Message.create!(message_data)
   end
 

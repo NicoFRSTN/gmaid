@@ -1,11 +1,11 @@
 require "uri"
 require "net/http"
 
-class BatchGoogleModify
-  def initialize(user, message_id)
+class BatchTrashGoogleMessages
+  def initialize(user, google_message_ids)
     @email = user.email
     @bearer_token = user.google_token
-    @message_id = message_id
+    @google_message_ids = google_message_ids
   end
 
 
@@ -22,11 +22,8 @@ class BatchGoogleModify
     }
 
     request.body = JSON.dump({
-  "addLabelIds" =>
-  ],
-  "ids" =>
-  ],
-  "removeLabelIds" =>
+  "ids" => @google_message_ids,
+  "addLabelIds" =>["TRASH"
   ]
 })
 

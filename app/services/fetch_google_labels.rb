@@ -21,9 +21,6 @@ class FetchGoogleLabels
 
     http.use_ssl = true
     result = JSON.parse(http.get(uri.request_uri, headers).body)
-
-    ap result
-
     result["labels"].map do |label|
     format_label(label)
     end

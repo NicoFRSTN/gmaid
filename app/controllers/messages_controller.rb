@@ -34,13 +34,39 @@ class MessagesController < ApplicationController
     @message = Message.destroy(params[:id])
   end
 
+  def batch_action
+    case params[:commit]
+    when "Mark as read" then batch_mark_as_read
+    when "Delete" then batch_delete
+    else
+      puts "no commit ..."
+    end
+    redirect_to request.referrer
+  end
+
   def sync
-    # current_user.messages.destroy_all
+    current_user.messages.destroy_all
     SyncMessages.new(current_user).call
     redirect_to root_path
   end
 
   private
+
+  def batch_mark_as_read
+    ap "je suis dans batch_mark_as_read"
+    ap params[:ids]
+    messages = Message.all
+    google_message_ids = messages.map(&:google_id)
+    BatchMarkGoogleMessages.new(User.last, google_message_ids).call
+  end
+
+  def batch_delete
+    ap "je suis dans batch_delete"
+    ap params[:ids]
+    messages = Message.all
+    google_message_ids = messages.map(&:google_id)
+    BatchTrashGoogleMessages.new(User.last, google_message_ids).call
+  end
 
   def big_senders
     query = "SELECT snippet FROM messages"
