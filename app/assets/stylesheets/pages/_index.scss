@@ -7,3 +7,52 @@
   background: white;
   margin-bottom: 43px;
 }
+.mail-card {
+  padding: 0px;
+  width:100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.mail-card:hover {
+ transform: scale(1.01);
+}
+
+.big-checkbox  > input {
+  width: 30px; height: 30px;
+}
+.big-checkbox {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background: $orange;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.message-content{
+  background: $blue;
+  border-top-right-radius: 15px;
+  font-size: 16px;
+
+}
+.sender-content{
+  background: $light-gray;
+  color: $gray;
+  font-size: 16px;
+}
+.date-content{
+  background: $gray;
+  border-bottom-right-radius: 15px;
+  color: white;
+  font-size: 16px;
+}
+.main-div {
+  border-radius: 15px;
+  width: 100%;
+}
+
+.far {
+  font-size: 30px;
+}

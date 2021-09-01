@@ -12,8 +12,8 @@
 }
 
 .main-cards {
-  background: rgb(205, 243, 255);
-  width: 60%;
+  background:$blue;
+  width: 80%;
   height:200px;
   justify-content: center;
   border-radius: 15px;
@@ -38,9 +38,8 @@
   padding: 10px;
   justify-content: center;
   font-size: x-large;
-
   font-weight: 400;
-  color: #000000;
+  color: $black;
   font-weight:900;
 }
 
@@ -51,7 +50,7 @@
 
 
 .mail-count{
-  background: rgb(94, 94, 94);
+  background: $gray;
   border-bottom-left-radius: 15px;
   height: 100%;
   display: flex;
@@ -73,7 +72,7 @@
 }
 
 .read-count{
-  background:lightgray;
+  background: $light-gray;
   height: 100%;
   display: flex;
   text-align: center;
@@ -85,7 +84,7 @@
 
 .mail-link{
   height: 100%;
-  background: rgb(243, 178, 0);
+  background: $orange;
   border-bottom-right-radius: 15px;
   text-align: center;
   display: flex;
@@ -96,12 +95,12 @@
 
 .mail-link a {
   font-size: xx-large;
-  color: #FFFFFF;
+  color: white;
   text-decoration: none;
 }
 
 .mail-link a:hover{
-  color: gray;
+  color: $gray;
   text-decoration: none;
 }
 
@@ -116,7 +115,7 @@
 }
 
 .read-number{
-  color: gray;
+  color: $gray;
   font-size: 300%;
   vertical-align: baseline;
 }
@@ -129,11 +128,119 @@
 }
 
 .read-text {
-  color:gray;
+  color:$gray;
   text-align: start;
   line-height: normal;
   height: 50%;
 }
+
+.loading {
+  background-color: red;
+}
+
+.button-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.sync-button-card{
+  display: flex;
+  width: 30%;
+  height: 20%;
+  background-color: $orange;
+  border-radius: 15px;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  z-index: 5;
+}
+.sync-button-card:hover{
+  transform: scale(1.01);
+}
+
+.fas{
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
+.sync-button-text{
+  color: rgb(255, 255, 255);
+  font-size: large;
+  text-align: center;
+}
+
+.sync-button-text:hover{
+  color: $gray;
+  text-decoration: none;
+}
+
+.sync-button-card.active{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 55%;
+  height: 40%;
+  background-color:$orange;
+  border-radius: 15px;
+  padding: 10px;
+  align-items: center;
+  transition: 1s;
+  z-index: 9995;
+  margin-bottom: 50px;
+}
+
+.fas-loading{
+  color: white;
+  font-size: 150px;
+  text-align: center;
+  z-index: 9996;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.sync-button-text-loading {
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+  font-size: x-large;
+  text-align: center;
+  z-index: 9997;
+  animation: fadeIn 3s;
+  opacity: 1;
+}
+
+#shader{
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  animation: ShaderFadeIn 5s;
+  position: fixed;
+  opacity: 0.7;
+  display: none;
+  z-index: 5;
+}
+
+
+@keyframes fadeIn {
+  from {
+  	opacity: 0;
+  }
+  to {
+ 	opacity: 1;
+  }
+}
+
+@keyframes ShaderFadeIn {
+  from {
+  	opacity: 0;
+  }
+  to {
+ 	opacity: 0.7;
+  }
+}
+
 
 /* CARD BACKGROUNDS */
 
