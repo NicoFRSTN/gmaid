@@ -8,8 +8,8 @@
       <% end %>
     </h1>
     <div class="d-flex justify-content-around">
-      <%= f.submit "Mark as read", class: 'btn btn-dark pl-5 pr-5 mb-3' %>
-      <%= f.submit "Delete", class: 'btn btn-dark pl-5 pr-5 mb-3' %>
+      <%= f.submit "Mark as read", class: 'btn yellowbtn text-white pl-5 pr-5 mb-3' %>
+      <%= f.submit "Delete", class: 'btn yellowbtn text-white pl-5 pr-5 mb-3' %>
     </div>
   </div>
 
@@ -23,33 +23,39 @@
         <% names.each do |name, messages| %>
           <p><%= name %></p>
           <% messages.each do |message| %>
-            <div class='mail-card mx-auto'>
-              <div class='row d-flex justify-content-around'>
-                <div class='col-2 my-auto big-checkbox'>
-                  <input type="checkbox" name="ids[]" value=  "<%= message.id %>"><%= message.id %>
-                </div>
-                <div class='col-4 my-auto'>
-                  <p><%= message.from %></p>
-                  <p><%= message.name %> / <%= message.sender %></p>
-                  <div class='label-box d-flex mx-auto'>
-                    <% message.labels.each do |label| %>
-                      <div class='label'>
-                        <%= label.name %>
-                      </div>
-                    <% end %>
+
+          <div class='row mail-card'>
+
+            <div class='col-1 big-checkbox'>
+              <input type="checkbox" name="ids[]" value="<%= message.id %>">
+            </div>
+
+            <div class="col-11 semi-big-div bg-light">
+
+              <div class="row message-content justify-content-between p-4">
+                <p><strong>Subject: <%= message.subject %></strong></p>
+                <p><%= message.snippet %></p>
+              </div>
+
+              <div class='row'>
+                <div class="sender-content col-8 p-4 d-flex">
+                  <i class="far fa-user"></i>
+                  <div>
+                    <p><%= message.from %></p>
+                    <p><%= message.name %> / <%= message.sender %></p>
                   </div>
                 </div>
 
-                <div class="col-4 my-auto">
-                  <p><strong>Subject: <%= message.subject %></strong></p>
-                  <p><%= message.snippet %></p>
+                <div class="date-content col-4 text-center p-4 d-flex">
+                  <i class="far fa-calendar-alt"></i>
+                  <p><strong>Received on: </strong><br><br><%= message.date_at %></p>
                 </div>
 
-                <div class="col-2 my-auto">
-                  <h5><strong>Received on: </strong><br><%= message.date_at %></h5>
-                </div>
               </div>
+
             </div>
+          </div>
+
           <% end %>
         <% end %>
       <% end %>
