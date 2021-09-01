@@ -12,14 +12,9 @@ class User < ApplicationRecord
     data = access_token.info
     user = User.where(email: data['email']).first
 
-  # Uncomment the section below if you want users to be created if they don't exist
-    unless user
-      user = User.create(email: data['email'],
-      email: data['email'],
-      password: Devise.friendly_token[0,20]
-          )
-    end
-    user.update(:google_token => (access_token.credentials['token']))
+    # Uncomment the section below if you want users to be created if they don't exist
+    user ||= User.create(email: data['email'], password: Devise.friendly_token[0,20])
+    user.update(google_token: (access_token.credentials['token']))
     user
   end
 
