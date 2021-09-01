@@ -30,14 +30,14 @@
 
 
                 <% messages.each do |message| %>
-                  <div class='mail-card mx-auto row '>
-                    <div class='d-flex'>
+                  <div class='mail-card mx-auto row'>
+                    <div class='d-flex justify-content-around flex-fill'>
                       <div class='checkbox-column col-1 my-auto'>
                         <div class='col-1 my-auto big-checkbox'>
                           <input type="checkbox" id="mail_checkbox" name="check">
                         </div>
                       </div>
-                      <div class='sender-column col-4 my-auto'>
+                      <div class='sender-column col-4 my-auto p-3'>
                         <p><%= message.from %></p>
                         <p><%= message.name %> / <%= message.sender %></p>
                         <div class='label-box d-flex mx-auto'>
@@ -51,12 +51,12 @@
                       </div>
                     </div>
 
-                      <div class="col-5 my-auto">
+                      <div class="col-5 my-auto flex-fill">
                         <p><strong>Subject: <%= message.subject %></strong></p>
                         <p><%= message.snippet %></p>
                       </div>
 
-                      <div class="date-column col-2 my-auto">
+                      <div class="date-column col-2 my-auto flex-fill">
                         <h5><strong>Received on: </strong><br><%= message.date_at %></h5>
                       </div>
                     </div>
