@@ -1,65 +1,58 @@
-<div class="header sticky-top mb-3">
-  <h1 class="text-center m-3">
-    <% if params.key? :sender_domain %>
-      Your mails from <%= params[:sender_domain] %>
-    <% else %>
-      Tous les messages
-    <% end %>
-  </h1>
-  <div class="d-flex justify-content-around">
-    <button class="btn btn-dark pl-5 pr-5 mb-3">Mark as read</button>
-    <button class="btn btn-dark pl-5 pr-5 mb-3 ">Add tag</button>
-    <button class="btn btn-dark pl-5 pr-5 mb-3">Get notified</button>
-    <button class="btn btn-dark pl-5 pr-5 mb-3">Delete</button>
+<%= form_with(url: batch_action_messages_path, method: :delete) do |f| %>
+  <div class="header sticky-top mb-3">
+    <h1 class="text-center m-3">
+      <% if params.key? :sender_domain %>
+        Your mails from <%= params[:sender_domain] %>
+      <% else %>
+        Tous les messages
+      <% end %>
+    </h1>
+    <div class="d-flex justify-content-around">
+      <%= f.submit "Mark as read", class: 'btn btn-dark pl-5 pr-5 mb-3' %>
+      <%= f.submit "Delete", class: 'btn btn-dark pl-5 pr-5 mb-3' %>
+    </div>
   </div>
-</div>
 
-<div class='container'>
-  <% @data.each do |sender_domain, senders| %>
 
+  <div class='container'>
+  <%# ici %>
+    <% @data.each do |sender_domain, senders| %>
       <h2>Sender : <%= sender_domain %></h2>
-
-        <% senders.each do |sender, names| %>
-
-            <h4>Genre : <%= sender %></h4>
-
-               <% names.each do |name, messages| %>
-
-                  <p><%= name %></p>
-
-
-
-                <% messages.each do |message| %>
-                  <div class='mail-card mx-auto'>
-                    <div class='row d-flex justify-content-around'>
-                      <div class='col-2 my-auto big-checkbox'>
-                        <input type="checkbox" id="mail_checkbox" name="check">
+      <% senders.each do |sender, names| %>
+        <h4>Genre : <%= sender %></h4>
+        <% names.each do |name, messages| %>
+          <p><%= name %></p>
+          <% messages.each do |message| %>
+            <div class='mail-card mx-auto'>
+              <div class='row d-flex justify-content-around'>
+                <div class='col-2 my-auto big-checkbox'>
+                  <input type="checkbox" name="ids[]" value=  "<%= message.id %>"><%= message.id %>
+                </div>
+                <div class='col-4 my-auto'>
+                  <p><%= message.from %></p>
+                  <p><%= message.name %> / <%= message.sender %></p>
+                  <div class='label-box d-flex mx-auto'>
+                    <% message.labels.each do |label| %>
+                      <div class='label'>
+                        <%= label.name %>
                       </div>
-                      <div class='col-4 my-auto'>
-                        <p><%= message.from %></p>
-                        <p><%= message.name %> / <%= message.sender %></p>
-                        <div class='label-box d-flex mx-auto'>
-
-                            <% message.labels.each do |label| %>
-                              <div class='label'>
-                                <%= label.name %>
-                              </div>
-                            <% end %>
-
-                      </div>
-                    </div>
-
-                      <div class="col-4 my-auto">
-                        <p><strong>Subject: <%= message.subject %></strong></p>
-                        <p><%= message.snippet %></p>
-                      </div>
-
-                      <div class="col-2 my-auto">
-                        <h5><strong>Received on: </strong><br><%= message.date_at %></h5>
-                      </div>
-                    </div>
+                    <% end %>
                   </div>
-                <% end %>
-              <% end %>
-            <% end %>
+                </div>
+
+                <div class="col-4 my-auto">
+                  <p><strong>Subject: <%= message.subject %></strong></p>
+                  <p><%= message.snippet %></p>
+                </div>
+
+                <div class="col-2 my-auto">
+                  <h5><strong>Received on: </strong><br><%= message.date_at %></h5>
+                </div>
+              </div>
+            </div>
           <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
