@@ -41,7 +41,9 @@ class MessagesController < ApplicationController
     else
       puts "no commit ..."
     end
+
     redirect_to request.referrer
+
   end
 
   def sync
@@ -55,15 +57,19 @@ class MessagesController < ApplicationController
   def batch_mark_as_read
     ap "je suis dans batch_mark_as_read"
     ap params[:ids]
+
     google_message_ids = Message.where(id: params[:ids]).pluck(:google_id)
     BatchMarkGoogleMessages.new(User.last, google_message_ids).call
+
   end
 
   def batch_delete
     ap "je suis dans batch_delete"
     ap params[:ids]
+
     google_message_ids = Message.where(id: params[:ids]).pluck(:google_id)
     BatchTrashGoogleMessages.new(User.last, google_message_ids).call
+
   end
 
   def big_senders
