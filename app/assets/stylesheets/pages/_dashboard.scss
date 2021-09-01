@@ -38,7 +38,6 @@
   padding: 10px;
   justify-content: center;
   font-size: x-large;
-
   font-weight: 400;
   color: $black;
   font-weight:900;
@@ -156,6 +155,9 @@
   align-items: center;
   margin-bottom: 20px;
   z-index: 5;
+}
+.sync-button-card:hover{
+  transform: scale(1.01);
 }
 
 .fas{
