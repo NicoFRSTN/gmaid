@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     delete :batch_action, on: :collection
     resources :labels, only: [:create, :edit, :update]
     post :sync, on: :collection
+    post :delete, on: :collection
+    post :mark, on: :collection
   end
   resources :labels, only: [:destroy]
 
