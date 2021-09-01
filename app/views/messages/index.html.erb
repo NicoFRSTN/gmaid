@@ -1,4 +1,4 @@
-<%= form_with(url: batch_action_messages_path, method: :delete) do |f| %>
+<%= form_with(url: batch_action_messages_path, method: :delete, id: "messages_form") do |f| %>
   <div class="header sticky-top mb-3">
     <h1 class="text-center m-3">
       <% if params.key? :sender_domain %>
@@ -8,8 +8,11 @@
       <% end %>
     </h1>
     <div class="d-flex justify-content-around">
-      <%= f.submit "Mark as read", class: 'btn yellowbtn text-white pl-5 pr-5 mb-3' %>
-      <%= f.submit "Delete", class: 'btn yellowbtn text-white pl-5 pr-5 mb-3' %>
+      <%= link_to "Select ALL", class: 'selectall btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3'  %>
+      <%#= f.submit "Select All", class: 'btns text-white pl-5 pr-5 mb-3' %>
+      <%= f.submit "Mark as read", class: 'btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3' %>
+      <%= f.submit   "Delete", class: 'btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3' %>
+
     </div>
   </div>
 
