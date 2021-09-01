@@ -12,7 +12,7 @@
 }
 
 .main-cards {
-  background: rgb(205, 243, 255);
+  background:$blue;
   width: 80%;
   height:200px;
   justify-content: center;
@@ -40,7 +40,7 @@
   font-size: x-large;
 
   font-weight: 400;
-  color: #000000;
+  color: $black;
   font-weight:900;
 }
 
@@ -51,7 +51,7 @@
 
 
 .mail-count{
-  background: rgb(94, 94, 94);
+  background: $gray;
   border-bottom-left-radius: 15px;
   height: 100%;
   display: flex;
@@ -73,7 +73,7 @@
 }
 
 .read-count{
-  background:lightgray;
+  background: $light-gray;
   height: 100%;
   display: flex;
   text-align: center;
@@ -85,7 +85,7 @@
 
 .mail-link{
   height: 100%;
-  background: rgb(243, 178, 0);
+  background: $orange;
   border-bottom-right-radius: 15px;
   text-align: center;
   display: flex;
@@ -96,12 +96,12 @@
 
 .mail-link a {
   font-size: xx-large;
-  color: #FFFFFF;
+  color: white;
   text-decoration: none;
 }
 
 .mail-link a:hover{
-  color: gray;
+  color: $gray;
   text-decoration: none;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .read-number{
-  color: gray;
+  color: $gray;
   font-size: 300%;
   vertical-align: baseline;
 }
@@ -129,7 +129,7 @@
 }
 
 .read-text {
-  color:gray;
+  color:$gray;
   text-align: start;
   line-height: normal;
   height: 50%;
@@ -149,7 +149,7 @@
   display: flex;
   width: 30%;
   height: 20%;
-  background-color: rgb(243, 178, 0);
+  background-color: $orange;
   border-radius: 15px;
   justify-content: space-around;
   padding: 10px;
@@ -171,7 +171,7 @@
 }
 
 .sync-button-text:hover{
-  color: gray;
+  color: $gray;
   text-decoration: none;
 }
 
@@ -181,7 +181,7 @@
   margin: 0 auto;
   width: 55%;
   height: 40%;
-  background-color:rgb(243, 178, 0);
+  background-color:$orange;
   border-radius: 15px;
   padding: 10px;
   align-items: center;
