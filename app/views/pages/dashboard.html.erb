@@ -3,16 +3,18 @@
 <div class="container">
 
   <!-- Bouton sync -->
+
+
+<%= link_to sync_messages_path(current_user), method: :post, remote: true,:class => 'sync-button-link' do %>
   <div class='button-container'>
     <div class="sync-button-card">
       <i class="fas fa-sync-alt"></i>
-    <div>
-      <%= link_to sync_messages_path(current_user), method: :post, remote: true,:id => 'sync', :class => "sync-button-text" do %>
+      <div class= "sync-button-text">
         Synchronize my gmail
-      <% end %>
       </div>
     </div>
   </div>
+<% end %>
 
 
   <!-- Cards -->
