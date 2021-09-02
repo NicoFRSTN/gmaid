@@ -13,7 +13,17 @@
 @import "components/index";
 @import "pages/index";
 @import "components/index-cards";
-body {
+
+body {  
 background: rgb(248, 248, 248);
-font-family: 'Poppins', sans-serif;
+font-family: 'Poppins', sans-serif;  
 }
+
+a{
+  opacity: 100%;
+}
+
+a:hover{
+  text-decoration: none;
+  opacity: 100%;
+  } 

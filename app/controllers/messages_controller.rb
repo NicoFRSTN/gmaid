@@ -47,7 +47,7 @@ class MessagesController < ApplicationController
   end
 
   def sync
-    current_user.messages.destroy_all
+    # current_user.messages.destroy_all
     SyncMessages.new(current_user).call
     redirect_to root_path
   end
