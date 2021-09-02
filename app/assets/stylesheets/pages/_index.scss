@@ -9,6 +9,21 @@
   background: $blue;
   border-bottom: 1px solid lightgrey;
   margin-bottom: 43px;
+  transition: all 0.1s ease-in;
+}
+
+.header-small {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  transition: all 0.1s ease-in;
+    h1 {
+      display:none;
+    }
+    .btn-action {
+      margin-bottom: 0 !important;
+    }
 }
 
 .mail-card {
@@ -98,4 +113,5 @@ i {
 
 .h1index {
   font-family: 'Poppins', sans-serif;
+  color: white;
 }

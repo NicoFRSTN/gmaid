@@ -25,10 +25,14 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import initLoader from "../component/loader";
 import noClickable from "../component/no_clickable";
+import initUpdateHeaderOnScroll from "../component/header"
+import addButtonDisabledWhenClickSelectAll from "../component/no_clickable";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initLoader();
   noClickable();
+  initUpdateHeaderOnScroll();
+  addButtonDisabledWhenClickSelectAll();
 })
