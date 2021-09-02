@@ -19,7 +19,8 @@
   <div class="cards-container mx-auto">
     <% @biggest_senders.each do |couple| %>
       <% domain = couple["domain"] %>
-      <% number = couple["number"] %>
+      <% total = couple["total"] %>
+      <% total_no_read = couple["total_no_read"] %>
       <%= link_to messages_path(sender_domain: domain) do %>
         <div class="main-cards mx-auto">
           <div class="main-cards-sender row">
@@ -31,23 +32,27 @@
               <i class="far fa-envelope fa-4x mx-auto"></i>
               <div class="received-count d-flex mx-auto mr-3">
                 <div class="unread-number">
-                  <%= number %>
+                  <%= total %>
                 </div>
                 <div class="unread-text ml-2">
-                <p>RECEIVED<br>MAILS</p>
+                  <p>RECEIVED<br>MAILS</p>
                 </div>
-
               </div>
-            </div>
-            <div class="read-count d-flex col-6">
+
+          </div>
+            <div class="read-count d-flex justify-content-around col-6">
+                <i class="far fa-eye fa-4x mx-auto"></i>
+                <div class="read-count d-flex mx-auto">
                   <div class="read-number">
-                    <%= number %>
+                    <%= total_no_read %>
                   </div>
                   <div class="read-text ml-2">
-                    <p>READ<br>MAIL</p>
+                    <p>UNREAD<br>MAILS</p>
                   </div>
-                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       <% end %>
     <% end %>

@@ -11,7 +11,8 @@
 }
 
 .main-cards {
-  background:$white;
+  background:(228, 241, 254);
+  opacity: 100%;
   width: 80%;
   height:200px;
   justify-content: center;
@@ -116,7 +117,7 @@
 }
 
 .read-number{
-  color: $gray;
+  color: $white;
   font-size: 300%;
   vertical-align: baseline;
 }
@@ -126,13 +127,19 @@
   text-align: start;
   line-height: normal;
   height: 50%;
+  text-decoration: none;
 }
 
 .read-text {
-  color:$gray;
+  color:$white;
   text-align: start;
   line-height: normal;
   height: 50%;
+  text-decoration: none;
+}
+
+.read-text:hover {
+  text-decoration: none;
 }
 
 .loading {
