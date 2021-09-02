@@ -210,6 +210,12 @@
   margin-bottom: 15px;
 }
 
+.sync-button-link-loading {
+  pointer-events:none;
+  cursor: no-drop
+}
+
+
 .sync-button-text-loading {
   color: rgb(255, 255, 255);
   margin-top: 10px;
