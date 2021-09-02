@@ -3,47 +3,73 @@
 @import "dashboard";
 
 .header {
-  top: 76px;
-  background: white;
+  height: 200px;
+  top: 99px;
+  // background: rgb(248, 248, 248);
+  background: $blue;
+  border-bottom: 1px solid lightgrey;
   margin-bottom: 43px;
+  transition: all 0.1s ease-in;
 }
+
+.header-small {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  transition: all 0.1s ease-in;
+    h1 {
+      display:none;
+    }
+    .btn-action {
+      margin-bottom: 0 !important;
+    }
+}
+
 .mail-card {
-  padding: 0px;
   width:100%;
+  height: auto;
+  background: $blue;
   border-radius: 15px;
   margin-bottom: 10px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  justify-content: space-around;
 }
+
 
 .mail-card:hover {
  transform: scale(1.01);
 }
 
 .big-checkbox  > input {
-  width: 30px; height: 30px;
+  width: 25px; height: 25px;
 }
+
+
 .big-checkbox {
   display:flex;
   align-items: center;
   justify-content: center;
-  background: $orange;
+  background: white;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  border-left: 1px solid $bluelight;
+  border-bottom: 1px solid $bluelight;
 }
 
 .message-content{
-  background: $blue;
+  background: $bluesuperlight;
   border-top-right-radius: 15px;
   font-size: 16px;
 
 }
 .sender-content{
-  background: $light-gray;
-  color: $gray;
+  background: $blue;
+  color: $white;
   font-size: 16px;
 }
 .date-content{
-  background: $gray;
+  background: $bluelight;
   border-bottom-right-radius: 15px;
   color: white;
   font-size: 16px;
@@ -53,6 +79,39 @@
   width: 100%;
 }
 
-.far {
-  font-size: 50px;
+i {
+  font-size: 30px;
+  color: white;
+}
+.btn-action {
+  color:$bluelight;
+  background: $white;
+  border:none;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+
+}
+.btn-action:hover {
+  color:$blue;
+  background: white;
+  transform: scale(1.01);
+}
+
+.selectall {
+  color:white;
+  background: $bluelight;
+  border:none;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+}
+.selectall:hover {
+  background: $blue;
+}
+
+.selectall:focus {
+  border:none;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.h1index {
+  font-family: 'Poppins', sans-serif;
+  color: white;
 }

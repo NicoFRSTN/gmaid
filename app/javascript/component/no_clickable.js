@@ -23,25 +23,43 @@ const updateSubmitButton = () => {
 //   }
 // }
 
+const addButtonDisabledWhenClickSelectAll = () => {
+  const buttonselectall = document.querySelector('.selectall')
+  const btns = document.querySelectorAll("#messages_form input[type=submit]")
+
+  buttonselectall.addEventListener('click', (event) => {
+    event.preventDefault();
+    buttonselectall.click(function () {
+      btns.attr("disabled", !checkboxes.is(":checked"));
+    });
+  })
+}
+
+
+
+
+
 const initSelectAll = () => {
   const checkboxes = Array.from(document.querySelectorAll("#messages_form input[type=checkbox]"))
   const buttonselectall = document.querySelector('.selectall')
   buttonselectall.addEventListener('click', (event) => {
     event.preventDefault()
-    checkboxes.forEach((checkboxe) => {
-      if (checkboxe.checked == false) {
-        checkboxe.checked = true;
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked == false) {
+        checkbox.checked = true;
         buttonselectall.innerHTML = "Unselect"
       }
       else {
-        if (checkboxe.checked == true) {
-        checkboxe.checked = false;
+        if (checkbox.checked == true) {
+        checkbox.checked = false;
           buttonselectall.innerHTML = "Select all"
         }
       }
     })
   })
 }
+
+
 //   function checkAll(o) {
 //     const checkboxes = Array.from(document.querySelectorAll("#messages_form input[type=checkbox]"));
 //     for (let checkboxes = 0; checkboxes < checkboxes.length; checkboxes++) {
