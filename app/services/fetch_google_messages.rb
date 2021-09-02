@@ -45,8 +45,6 @@ class FetchGoogleMessages
     request["Accept"] = "application/json"
 
     response = https.request(request)
-    ap "response"
-    ap response
     JSON.parse(response.read_body)
   end
 end
