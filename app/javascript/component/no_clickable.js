@@ -26,12 +26,20 @@ const updateSubmitButton = () => {
 const initSelectAll = () => {
   const checkboxes = Array.from(document.querySelectorAll("#messages_form input[type=checkbox]"))
   const buttonselectall = document.querySelector('.selectall')
-  console.log(buttonselectall)
   buttonselectall.addEventListener('click', (event) => {
     event.preventDefault()
     checkboxes.forEach((checkboxe) => {
-     (checkboxe.checked);
-    });
+      if (checkboxe.checked == false) {
+        checkboxe.checked = true;
+        buttonselectall.innerHTML = "Unselect"
+      }
+      else {
+        if (checkboxe.checked == true) {
+        checkboxe.checked = false;
+          buttonselectall.innerHTML = "Select all"
+        }
+      }
+    })
   })
 }
 //   function checkAll(o) {
