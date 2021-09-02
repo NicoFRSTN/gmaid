@@ -21,7 +21,7 @@ class PagesController < ApplicationController
       FROM messages
       LEFT JOIN message_labels ON message_labels.message_id = messages.id AND message_labels.label_id IN (SELECT id FROM labels WHERE labels.name = 'UNREAD')
       GROUP BY domain
-      ORDER BY total_no_read desc, total desc, ratio desc
+      ORDER BY total_no_read desc, ratio desc, total desc
     SQL
     @biggest_senders =  ActiveRecord::Base.connection.execute(query).to_a
   end

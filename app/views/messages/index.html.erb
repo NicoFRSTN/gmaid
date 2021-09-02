@@ -37,23 +37,23 @@
 
 
               <div class="row message-content justify-content-between p-4">
+                <h1><strong>Subject: <%= message.subject %></strong></h1>
                 <p><% message.labels.each do |label| %>
                     <span style="background: <%= label_background_color(label)%>;
                                 color: <%= label_text_color(label)%>;
                                 border-radius: 4px;
-                                padding: 0 4px;
-                                margin: 0 10px;">
+                                padding: 0 4px 0 4px;
+                                margin: 0 10px 0 0;">
                       <%= label_name(label) %>
                     </span>
                   <% end %>
                 </p>
-                <p><strong>Subject: <%= message.subject %></strong></p>
-                <p><%= message.snippet %></p>
+                <p><%= message.snippet %>...</p>
               </div>
 
-              <div class='row'>
+              <div class='row d-flex my-auto'>
                 <div class="sender-content col-8 p-4 d-flex">
-                  <i class="far fa-user text-white pr-3 pt-2"></i>
+                  <i class="far fa-user text-white my-auto fa-4x pr-4"></i>
                   <div>
                     <p><%= message.from %><br>
                     <%= message.name %> / <%= message.sender %></p>
@@ -61,8 +61,8 @@
                 </div>
 
                 <div class="date-content col-4 p-4 d-flex">
-                  <i class="far fa-calendar-alt pr-3 pt-2"></i>
-                  <p><strong>Received on: </strong><br><%= message.date_at %></p>
+                  <i class="far fa-calendar-alt fa-4x my-auto pr-4"></i>
+                  <p><%= message.date_at.to_s %></p>
                 </div>
               </div>
 
