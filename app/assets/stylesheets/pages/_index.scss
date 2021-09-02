@@ -63,17 +63,38 @@
   font-size: 16px;
 
 }
+
+.message-content h1{
+  color: $blue;
+  font-size: 20px;
+  margin: 0;
+}
+
 .sender-content{
   background: $blue;
   color: $white;
   font-size: 16px;
 }
+
+.sender-content p{
+  color: $white;
+  font-size: 20px;
+  margin: 0;
+}
+
 .date-content{
   background: $bluelight;
   border-bottom-right-radius: 15px;
   color: white;
   font-size: 16px;
 }
+
+.date-content p{
+  color: $white;
+  font-size: 20px;
+  margin: 0;
+}
+
 .main-div {
   border-radius: 15px;
   width: 100%;
