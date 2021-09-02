@@ -17,16 +17,12 @@
 
   <div class='container'>
     <%= link_to "Select All", messages_path, class: 'selectall btn text-white pl-3 pr-3 m-4'%>
-
     <% @data.each do |sender_domain, senders| %>
         <%=sender_domain%>
-
       <% senders.each do |sender, names| %>
         <%=sender%>
-
         <% names.each do |name, messages| %>
           <% name %>
-
           <% messages.each do |message| %>
 
           <div class='row mail-card m-4'>
@@ -37,10 +33,6 @@
 
             <div class="main-div col-11 semi-big-div">
 
-                <p>
-                  <% message.labels.each do |label| %>
-                    <span style="background: <%= label_background_color(label)%>;
-                                 color: <%= label_text_color(label)%>;
 
 
 
