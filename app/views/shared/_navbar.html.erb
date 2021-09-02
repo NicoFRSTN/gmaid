@@ -11,7 +11,8 @@
     <div class="w-100">
       <ul class="navbar-nav mr-auto justify-content-end">
         <% if user_signed_in? %>
-          <li class="nav-item">
+          <li class="nav-item justify-content-space-between">
+            <img src= "<%= User.last.avatar %>" class= "avatar" alt="">
             <%= link_to "Logout",  destroy_user_session_path, :class => "btn btn-outline-warning lien-nav" %>
           </li>
         <% end %>
