@@ -23,17 +23,15 @@ const updateSubmitButton = () => {
 //   }
 // }
 
-const addButtonDisabledWhenClickSelectAll = () => {
-  const buttonselectall = document.querySelector('.selectall')
-  const btns = document.querySelectorAll("#messages_form input[type=submit]")
+// const addButtonDisabledWhenClickSelectAll = () => {
+//   const buttonselectall = document.querySelector('.selectall')
+//   const btns = document.querySelectorAll("#messages_form input[type=submit]")
 
-  buttonselectall.addEventListener('click', (event) => {
-    event.preventDefault();
-    buttonselectall.click(function () {
-      btns.attr("disabled", !checkboxes.is(":checked"));
-    });
-  })
-}
+//   buttonselectall.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     btns.classList.toggle('disabled');
+//   })
+// }
 
 
 
@@ -42,8 +40,11 @@ const addButtonDisabledWhenClickSelectAll = () => {
 const initSelectAll = () => {
   const checkboxes = Array.from(document.querySelectorAll("#messages_form input[type=checkbox]"))
   const buttonselectall = document.querySelector('.selectall')
+  const btns = document.querySelectorAll("#messages_form input[type=submit]")
+  console.log(btns);
   buttonselectall.addEventListener('click', (event) => {
     event.preventDefault()
+    btns.forEach(btn => btn.classList.toggle('disabled'));
     checkboxes.forEach((checkbox) => {
       if (checkbox.checked == false) {
         checkbox.checked = true;
@@ -83,3 +84,4 @@ const noClickable = () => {
 }
 
 export default noClickable
+// export default addButtonDisabledWhenClickSelectAll
