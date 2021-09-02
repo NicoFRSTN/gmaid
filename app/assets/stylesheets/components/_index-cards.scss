@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .mail-card {
   width:100%;
   height: auto;
@@ -15,6 +16,8 @@
 .big-checkbox  > input {
   width: 50px; height: 50px;
 }
+=======
+>>>>>>> 30e049186c6ee07ab8504b294a727ffd6b917128
 
 .label{
   background:$orange;
@@ -23,34 +26,4 @@
   padding-right: 3px;
   margin-right: 5px;
   font-size: small;
-}
-
-.checkbox-column{
-  display: flex;
-  align-content:center;
-  justify-items: left;
-  height: 100%;
-  background-color: $orange;
-  border-radius: 15px 0 0 15px;
-}
-
-.sender-column{
-  display: flex;
-  flex-direction: column;
-  background-color: $light-gray;
-  height: 100%;
-  align-content: center;
-  justify-content: center;
-}
-
-.date-column{
-  right: 0%;
-  display: flex;
-  flex-direction: column;
-  background-color:$gray;
-  height: 100%;
-  align-content: center;
-  justify-content: center;
-  border-radius: 0 15px 15px 0;
-
 }
