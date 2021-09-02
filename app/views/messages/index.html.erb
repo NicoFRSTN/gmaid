@@ -8,16 +8,15 @@
       <% end %>
     </h1>
     <div class="d-flex justify-content-around">
-      <%#= f.submit "Select All", class: 'btns text-white pl-5 pr-5 mb-3' %>
-      <%= f.submit "Mark as read", class: 'btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3' %>
-      <%= f.submit "Delete", class: 'btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3' %>
+      <%= f.submit "Mark as read", class: 'btn-action btn-lg disabled pl-5 pr-5 mb-3' %>
+      <%= f.submit "Delete", class: 'btn-action btn-lg disabled pl-5 pr-5 mb-3' %>
 
     </div>
   </div>
 
 
   <div class='container'>
-    <%= link_to "Select All", messages_path, class: 'selectall btn btn-secondary text-white btn-sm pl-5 pr-5 m-4'%>
+    <%= link_to "Select All", messages_path, class: 'selectall btn btn-secondary text-white btn-sm pl-3 pr-3 m-4'%>
 
     <% @data.each do |sender_domain, senders| %>
         <%=sender_domain%>
@@ -33,7 +32,7 @@
           <div class='row mail-card m-4'>
 
             <div class='col-1 big-checkbox'>
-              <input type="checkbox" name="ids[]" value="<%= message.id %>">
+              <input class="check" type="checkbox" name="ids[]" value="<%= message.id %>">
             </div>
 
             <div class="main-div col-11 semi-big-div">
@@ -45,7 +44,7 @@
 
               <div class='row'>
                 <div class="sender-content col-8 p-4 d-flex">
-                  <i class="far fa-user pr-3 pt-2" style="color:#808080;"></i>
+                  <i class="far fa-user text-white pr-3 pt-2" style="color:#808080;"></i>
                   <div>
                     <p><%= message.from %><br>
                     <%= message.name %> / <%= message.sender %></p>
