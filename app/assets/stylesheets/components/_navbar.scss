@@ -1,8 +1,6 @@
 .logo{
-  width: 100px;
-  height: 50px;
-  border-radius: 20%;
-  box-shadow: 2px 3px 3px 1px black;
+  width: 70px;
+  height: 70px;
 
 }
 
@@ -23,7 +21,7 @@
 .lien-nav{
   text-transform: uppercase;
   text-decoration: none;
-  color: white;
+  color: $gray;
 }
 .lien-nav:hover {
   color: rgb(213, 208, 208);
@@ -31,5 +29,9 @@
 }
 
 .navbar {
-  background: $light-gray;
+  background: rgba(0, 0, 0, 0.096);
+}
+
+.avatar{
+ margin-right: 10px;
 }
