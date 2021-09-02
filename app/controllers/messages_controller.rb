@@ -58,18 +58,23 @@ class MessagesController < ApplicationController
     ap "je suis dans batch_mark_as_read"
     ap params[:ids]
 
-    google_message_ids = Message.where(id: params[:ids]).pluck(:google_id)
+    messages = Message.where(id: params[:ids])
+    google_message_ids = messages.pluck(:google_id)
     BatchMarkGoogleMessages.new(User.last, google_message_ids).call
 
+    messages.each do |message|
+      LabelsSync.new(message).call
+    end
   end
 
   def batch_delete
     ap "je suis dans batch_delete"
     ap params[:ids]
 
-    google_message_ids = Message.where(id: params[:ids]).pluck(:google_id)
+    messages = Message.where(id: params[:ids])
+    google_message_ids = messages.pluck(:google_id)
     BatchTrashGoogleMessages.new(User.last, google_message_ids).call
-
+    messages.destroy_all
   end
 
   def big_senders

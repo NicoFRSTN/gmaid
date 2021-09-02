@@ -1,23 +1,22 @@
 <%= form_with(url: batch_action_messages_path, method: :delete, id: "messages_form") do |f| %>
   <div class="header sticky-top mb-3">
-    <h1 class="text-center m-3">
+    <h1 class="text-center pt-5 mb-4 h1index">
       <% if params.key? :sender_domain %>
         Your mails from <%= params[:sender_domain] %>
       <% else %>
         All messages
       <% end %>
     </h1>
-    <div class="d-flex justify-content-around">
-      <%#= f.submit "Select All", class: 'btns text-white pl-5 pr-5 mb-3' %>
-      <%= f.submit "Mark as read", class: 'btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3' %>
-      <%= f.submit "Delete", class: 'btn btn-warning text-white btn-lg disabled pl-5 pr-5 mb-3' %>
+    <div class="d-flex justify-content-center">
+      <%= f.submit "Mark as read", class: 'btn-action btn btn-lg disabled pl-4 pr-4 mr-5 mb-3' %>
+      <%= f.submit "Delete", class: 'btn-action btn btn-lg disabled pl-5 pr-5 mb-3' %>
 
     </div>
   </div>
 
 
   <div class='container'>
-    <%= link_to "Select All", messages_path, class: 'selectall btn btn-secondary text-white btn-sm pl-5 pr-5 m-4'%>
+    <%= link_to "Select All", messages_path, class: 'selectall btn text-white pl-3 pr-3 m-4'%>
 
     <% @data.each do |sender_domain, senders| %>
         <%=sender_domain%>
@@ -33,10 +32,28 @@
           <div class='row mail-card m-4'>
 
             <div class='col-1 big-checkbox'>
-              <input type="checkbox" name="ids[]" value="<%= message.id %>">
+              <input class="check" type="checkbox" name="ids[]" value="<%= message.id %>">
             </div>
 
             <div class="main-div col-11 semi-big-div">
+
+                <p>
+                  debug message id: <%= message.id %>
+                  <% message.labels.each do |label| %>
+                    <span style="background: <%= label_background_color(label)%>;
+                                 color: <%= label_text_color(label)%>;
+
+                                  border-radius: 4px;
+                                  padding: 0 4px;
+                                  margin: 0 10px;
+
+                    ">
+                      <%= label_name(label) %>
+                    </span>
+                  <% end %>
+                </p>
+
+
 
               <div class="row message-content justify-content-between p-4">
                 <p><strong>Subject: <%= message.subject %></strong></p>
@@ -45,7 +62,7 @@
 
               <div class='row'>
                 <div class="sender-content col-8 p-4 d-flex">
-                  <i class="far fa-user pr-3 pt-2" style="color:#808080;"></i>
+                  <i class="far fa-user text-white pr-3 pt-2" style="color:#808080;"></i>
                   <div>
                     <p><%= message.from %><br>
                     <%= message.name %> / <%= message.sender %></p>

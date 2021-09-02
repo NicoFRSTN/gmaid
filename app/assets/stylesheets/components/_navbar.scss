@@ -1,5 +1,5 @@
 .logo{
-  width: 70px;
+  width: 80px;
   height: 70px;
 
 }
@@ -21,15 +21,21 @@
 .lien-nav{
   text-transform: uppercase;
   text-decoration: none;
-  color: $gray;
+  border: none;
+  background: $white;
+  color: $blue;
+  border: 1px solid $blue;
+
 }
 .lien-nav:hover {
-  color: rgb(213, 208, 208);
+  background: $blue;
   text-decoration: none;
+  border: 1px solid $blue;
 }
 
 .navbar {
-  background: rgba(0, 0, 0, 0.096);
+  background: white;
+  height: 100px;
 }
 
 .avatar{
