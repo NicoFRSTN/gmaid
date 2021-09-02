@@ -20,9 +20,14 @@
     <%= link_to "Select All", messages_path, class: 'selectall btn btn-secondary text-white btn-sm pl-5 pr-5 m-4'%>
 
     <% @data.each do |sender_domain, senders| %>
+        <%=sender_domain%>
 
       <% senders.each do |sender, names| %>
+        <%=sender%>
+
         <% names.each do |name, messages| %>
+          <% name %>
+
           <% messages.each do |message| %>
 
           <div class='row mail-card m-4'>
