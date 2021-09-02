@@ -26,7 +26,7 @@ import "bootstrap";
 import initLoader from "../component/loader";
 import noClickable from "../component/no_clickable";
 import initUpdateHeaderOnScroll from "../component/header"
-import addButtonDisabledWhenClickSelectAll from "../component/no_clickable";
+// import addButtonDisabledWhenClickSelectAll from "../component/no_clickable";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -34,5 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   initLoader();
   noClickable();
   initUpdateHeaderOnScroll();
-  addButtonDisabledWhenClickSelectAll();
+  // addButtonDisabledWhenClickSelectAll();
 })

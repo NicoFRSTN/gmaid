@@ -42,26 +42,26 @@
                     <span style="background: <%= label_background_color(label)%>;
                                  color: <%= label_text_color(label)%>;
 
-                                  border-radius: 4px;
-                                  padding: 0 4px;
-                                  margin: 0 10px;
 
-                    ">
+
+              <div class="row message-content justify-content-between p-4">
+                <p><% message.labels.each do |label| %>
+                    <span style="background: <%= label_background_color(label)%>;
+                                color: <%= label_text_color(label)%>;
+                                border-radius: 4px;
+                                padding: 0 4px;
+                                margin: 0 10px;">
                       <%= label_name(label) %>
                     </span>
                   <% end %>
                 </p>
-
-
-
-              <div class="row message-content justify-content-between p-4">
                 <p><strong>Subject: <%= message.subject %></strong></p>
                 <p><%= message.snippet %></p>
               </div>
 
               <div class='row'>
                 <div class="sender-content col-8 p-4 d-flex">
-                  <i class="far fa-user text-white pr-3 pt-2" style="color:#808080;"></i>
+                  <i class="far fa-user text-white pr-3 pt-2"></i>
                   <div>
                     <p><%= message.from %><br>
                     <%= message.name %> / <%= message.sender %></p>
