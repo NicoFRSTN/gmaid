@@ -19,10 +19,12 @@ module ApplicationHelper
   end
 
   def priority_icon(domain)
-    if domain["total"] > 5 && domain["ratio"] >= 0.5
-      '<i class="fas fa-broom"style="color: red"></i>'.html_safe
+    if domain["total"] > 10 && domain["ratio"] >= 0.5
+      '<i class="fas fa-exclamation-circle"style="color: #f64747"></i>'.html_safe
+    elsif domain["total"] > 5 || domain["ratio"] >= 0.2
+      '<i class="fas fa-exclamation-circle" style="color: #f4b350"></i>'.html_safe
     else
-      '<i class="fas fa-broom" style="color: orange"></i>'.html_safe
+      '<i class="fas fa-check-circle" style="color: #7befb2"></i>'.html_safe
     end
   end
 end
