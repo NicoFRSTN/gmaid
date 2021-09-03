@@ -18,15 +18,12 @@
   <div class='container'>
     <%= link_to "Select All", messages_path, class: 'selectall btn text-white pl-3 pr-3 m-4'%>
     <% @data.each do |sender_domain, senders| %>
-        <%=sender_domain%>
       <% senders.each do |sender, names| %>
-        <%=sender%>
         <% names.each do |name, messages| %>
           <% name %>
           <% messages.each do |message| %>
 
           <div class='row mail-card m-4'>
-
             <div class='col-1 big-checkbox'>
               <input class="check" type="checkbox" name="ids[]" value="<%= message.id %>">
             </div>
@@ -54,9 +51,9 @@
               <div class='row d-flex my-auto'>
                 <div class="sender-content col-8 p-4 d-flex">
                   <i class="far fa-user text-white my-auto fa-4x pr-4"></i>
-                  <div>
-                    <p><%= message.from %><br>
-                    <%= message.name %> / <%= message.sender %></p>
+                  <div class="sender">
+                    <h4><%= message.name %></h4>
+                    <p><%= message.sender %>@<%= message.sender_domain %><p>
                   </div>
                 </div>
 

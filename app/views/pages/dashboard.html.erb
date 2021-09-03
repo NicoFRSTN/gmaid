@@ -19,14 +19,19 @@
 
   <!-- Cards -->
   <div class="cards-container mx-auto">
-    <% @biggest_senders.each do |couple| %>
-      <% domain = couple["domain"] %>
-      <% total = couple["total"] %>
-      <% total_no_read = couple["total_no_read"] %>
-      <%= link_to messages_path(sender_domain: domain) do %>
-        <div class="main-cards mx-auto">
+    <% @biggest_senders.each do |domain| %>
+      <% domain_name = domain["domain"] %>
+      <% total = domain["total"] %>
+      <% total_no_read = domain["total_no_read"] %>
+      <%= link_to messages_path(sender_domain: domain_name) do %>
+          <div class="main-cards mx-auto">
+
+          <div class="priority">
+            <%= priority_icon(domain) %>
+          </div>
+
           <div class="main-cards-sender row">
-            <h1><%= domain %></h1>
+            <h1><%= domain_name %></h1>
           </div>
 
           <div class="main-cards-details d-flex row mx-auto w-100">
