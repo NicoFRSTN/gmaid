@@ -191,7 +191,6 @@
 }
 
 .sync-button-text:hover{
-  color: $gray;
   text-decoration: none;
 }
 
@@ -207,6 +206,7 @@
   align-items: center;
   transition: 1s;
   z-index: 9995;
+  margin-top: 200px;
   margin-bottom: 50px;
 }
 
