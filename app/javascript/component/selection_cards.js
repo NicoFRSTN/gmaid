@@ -1,4 +1,17 @@
+const initCardsSelectionable = () => {
+  document.querySelectorAll('.mail-card').forEach((cardElement) => {
+    cardElement.addEventListener('click', (e) => {
+      cardElement.querySelector('input').checked = !cardElement.querySelector('input').checked
+      updateSubmitButton()
+    })
+  })
 
+  document.querySelectorAll('.mail-card input').forEach((input) => {
+    input.addEventListener('click', (e) => {
+      e.stopPropagation();
+    })
+  })
+}
 
 
 const updateSubmitButton = () => {
@@ -41,7 +54,6 @@ const initSelectAll = () => {
   const checkboxes = Array.from(document.querySelectorAll("#messages_form input[type=checkbox]"))
   const buttonselectall = document.querySelector('.selectall')
   const btns = document.querySelectorAll("#messages_form input[type=submit]")
-  console.log(btns);
   buttonselectall.addEventListener('click', (event) => {
     event.preventDefault()
     btns.forEach(btn => btn.classList.toggle('disabled'));
@@ -73,8 +85,9 @@ const initSelectAll = () => {
 //   }
 
 
-const noClickable = () => {
+const initSelectionCards = () => {
   initSelectAll()
+  initCardsSelectionable()
   const checkboxes = document.querySelectorAll("#messages_form input[type=checkbox]")
   const btns = document.querySelectorAll("#messages_form input[type=submit]")
 
@@ -83,5 +96,5 @@ const noClickable = () => {
   })
 }
 
-export default noClickable
+export default initSelectionCards
 // export default addButtonDisabledWhenClickSelectAll

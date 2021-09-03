@@ -9,9 +9,6 @@ const initLoader = () => {
   const shader = document.querySelector('#shader')
   const link = document.querySelector('.sync-button-link')
 
-  console.log(bouton)
-
-
   document.addEventListener('ajax:before', () => {
     bouton.classList.toggle("active")
     spinner.classList.toggle('fa-spin')

@@ -62,7 +62,7 @@
 
                 <div class="date-content col-4 p-4 d-flex">
                   <i class="far fa-calendar-alt fa-4x my-auto pr-4"></i>
-                  <p><%= message.date_at.to_s %></p>
+                  <p><%= I18n.l message.date_at, format: :short %></p>
                 </div>
               </div>
 
